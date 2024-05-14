@@ -1,0 +1,22 @@
+---
+interface Props {
+    pageTitle :string
+    pageDescription : string
+}
+
+const {pageTitle, pageDescription} = Astro.props;
+
+---
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page Tags -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription}>
+
+    <!-- Style Tags -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- Animate On Scroll -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"> <!-- Font Awesome -->
+</head>
