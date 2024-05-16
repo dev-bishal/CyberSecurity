@@ -1,0 +1,50 @@
+---
+var brands=[
+    "PAN-Customer-callouts-07_ADT",
+    "PAN-Customer-callouts-07_AutoDesk",
+    "PAN-Customer-callouts-07_Better-mortgage",
+    "PAN-Customer-callouts-07_Caesar",
+    "PAN-Customer-callouts-07_Entel-telefonia",
+    "PAN-Customer-callouts-07_Envision-racing",
+    "PAN-Customer-callouts-07_Grupo-bimbo",
+    "PAN-Customer-callouts-07_Michelin",
+    "PAN-Customer-callouts-07_Resolution-life",
+    "PAN-Customer-callouts-07_Salesforce",
+    "PAN-Customer-callouts-07_Zespri"
+    ]
+---
+<style is:inline>
+
+    swiper-container.brandsSwiper {
+        width: 100%;
+        height: fit-content;
+        padding-top: 50px;
+    }   
+
+    swiper-container.brandsSwiper swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 100px;
+    }   
+
+    swiper-container.brandsSwiper swiper-slide img {
+        display: block;
+    }   
+
+</style>
+
+<section class="trustedBrandsSection">
+    <div class="wrapper z-[2] relative size-full flex justify-center items-center">
+        <div class="content w-full py-6">
+            <h2 class="text-center uppercase">Trusted by the Best</h2>
+            <swiper-container class="brandsSwiper" init="false">
+                {
+                    brands.map((brand) =>(
+                        <swiper-slide><img class="brandImg" src={"assets/images/" + brand + ".svg"}></swiper-slide>
+                    ))
+                }
+            </swiper-container>
+        </div>
+    </div>
+</section>
