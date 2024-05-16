@@ -1,0 +1,35 @@
+---
+import ContactCards2 from "./contactCards_2.astro";
+---
+
+<section class="contactSection lg:h-screen bg-gradient-to-bl from-[#010c24] to-[#032309af]">
+    <div
+        class="wrapper z-[2] relative size-full flex justify-center items-center">
+        <div class="content z-10 flex justify-center items-center lg:px-20 px-10">
+            <div class="cardsHolder bg-[#030303] flex lg:flex-row flex-col text-white px-14 py-12">
+                <ContactCards2 
+                    iconImageFile = "icon-paperclip.svg"
+                    title="Partner with us" 
+                    textContent="Leverage the first cloud-based security operations platform to give your clients world-class cybersecurity services." 
+                    linkText="Learn More" 
+                    linkUrl="javascript:void(0)">
+                </ContactCards2>
+                <ContactCards2 
+                    iconImageFile = "icon-users.svg"
+                    title="Join our team" 
+                    textContent="Join us in a journey of innovation and discovery, as we shape the future of cybersecurity operations." 
+                    linkText="See openings" 
+                    linkUrl="javascript:void(0)"
+                    isBordered=true>
+                </ContactCards2>
+                <ContactCards2 
+                    iconImageFile = "icon-envelope.svg"
+                    title="Contact Us" 
+                    textContent="Ready to speak to a human? feedback? We're always on a quest to improve so please share your thoughts." 
+                    linkText="Contact Us" 
+                    linkUrl="javascript:void(0)">
+                </ContactCards2>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,25 @@
+---
+interface Props {
+    title:string,
+    textContent:string,
+    iconImageFile:string,
+    linkText : string,
+    linkUrl : string,
+    isBordered?: string
+}
+
+const {title, textContent, iconImageFile, linkText, linkUrl, isBordered=false} = Astro.props;
+---
+
+<div class="card flex flex-col justify-between gap-8 p-6 lg:w-[33%]"
+class:list={
+    [isBordered && "lg:border-l lg:border-r border-t border-b lg:border-t-0 lg:border-b-0 border-green-700"]
+}>
+    <div class="content flex flex-col gap-8">
+        <img src={"/assets/images/"+iconImageFile} alt="icon image" class="size-14"/>
+        <h2 class="text-[2rem] lead font-bold">{title}</h2>
+        <p class="leading-7">{textContent}</p>
+    </div>
+    <a class="rounded-full w-fit bg-[#03eac1] items-center flex gap-3 px-8 py-2 font-bold shadow-lg"
+        href={linkUrl}>{linkText}</a>
+</div>
