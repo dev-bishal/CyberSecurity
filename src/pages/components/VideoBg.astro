@@ -1,0 +1,87 @@
+---
+
+---
+
+<section class="contactvideoBgSection">
+    <div class="video-holder relative top-0 left-0 size-full">
+        <!-- <div class="video-overlay bg-gradient-to-br from-[#656666af] to-[#010c24a0] size-full absolute z-[1]"></div> -->
+        <video
+            class="brightness-50 lg:h-auto h-screen object-cover"
+            width="1920"
+            height="1080"
+            autoplay
+            loop
+            muted
+            playsinline
+            webkit-playsinline
+        >
+            <source
+                src="/assets/images/videoBg.mp4"
+                type="video/mp4"
+            />
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="slide-container z-[2]] w-full h-[600px] text-white flex justify-center items-center overflow-hidden absolute top-0">
+            <div class="container1320 lg:w-[1020px] w-full h-[70%] lg:pt-20 relative">
+                <div class="size-full slide active flex justify-center items-center">
+                    <div class="content flex justify-center items-center">
+                        <span class="capitalize text-center text-4xl">Your threat landscape
+                            <span class="text-green-500 block lowercase">is always evolving.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="size-full slide flex justify-center items-center">
+                    <div class="content flex justify-center items-center">
+                        <span class="capitalize text-center text-4xl">Sophisticated threats
+                            <span class="text-green-500 block lowercase">dominate today's headlines.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="size-full slide flex justify-center items-center">
+                    <div class="content flex justify-center items-center">
+                        <span class="capitalize text-center text-4xl">
+                            <span class='text-green-500'>Together</span>
+                             , we can protect
+                            <span class="block">against <span class='lowercase text-green-500'>what's next.</span></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+
+    
+</section>
+
+<style>
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+        opacity: 1;
+        z-index: 1;
+    }
+</style>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+        const slideInterval = 3000; // 3 seconds
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add("active");
+        }
+
+        setInterval(nextSlide, slideInterval);
+    });
+</script>

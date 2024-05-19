@@ -34,14 +34,14 @@ var brands=[
 
 </style>
 
-<section class="trustedBrandsSection">
+<section class="trustedBrandsSection bg-gradient-to-br from-[#032309af] to-[#010c24]">
     <div class="wrapper z-[2] relative size-full flex justify-center items-center">
         <div class="content w-full py-6">
-            <h2 class="text-center uppercase">Trusted by the Best</h2>
+            <h2 class="text-center uppercase text-white">Trusted by the Best</h2>
             <swiper-container class="brandsSwiper" init="false">
                 {
                     brands.map((brand) =>(
-                        <swiper-slide><img class="brandImg" src={"assets/images/" + brand + ".svg"}></swiper-slide>
+                        <swiper-slide class="mb-3"><img class="brandImg size-full bg-white rounded-md" src={"assets/images/" + brand + ".svg"}></swiper-slide>
                     ))
                 }
             </swiper-container>
