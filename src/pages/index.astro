@@ -7,6 +7,8 @@ import MainLayout from "./layouts/MainLayout.astro";
 import HomeIncident from "./components/Home_Incident.astro";
 import ContactCards from "./components/contactCards.astro";
 import TrustedBrands from "./components/TrustedBrands.astro";
+import VideoBg from "./components/VideoBg.astro";
+import SliderCards from "./components/SliderCards.astro";
 ---
 
 <MainLayout>
@@ -20,6 +22,8 @@ import TrustedBrands from "./components/TrustedBrands.astro";
 	<HomeIncident />
 	<ContactCards />
 	<TrustedBrands />
+	<VideoBg />
+	<SliderCards />
 	
 	<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -32,6 +36,11 @@ import TrustedBrands from "./components/TrustedBrands.astro";
 		const swiperEl = document.querySelector(
 			".trustedBrandsSection swiper-container",
 		);
+
+		const swiperEl2 = document.querySelector(
+			".sliderCards swiper-container",
+		);
+
 		Object.assign(swiperEl, {
 			loop: "true",
 			freeMode: "true",
@@ -63,6 +72,32 @@ import TrustedBrands from "./components/TrustedBrands.astro";
 			},
 		});
 
+		Object.assign(swiperEl2, {
+			freeMode: "true",
+			slidesPerView: 3.3,
+			spaceBetween: 30,
+
+			breakpoints: {
+				"@0.00": {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				"@0.75": {
+					slidesPerView: 2.3,
+					spaceBetween: 20,
+				},
+				"@1.00": {
+					slidesPerView: 2.7,
+					spaceBetween: 40,
+				},
+				"@1.50": {
+					slidesPerView: 3.3,
+					spaceBetween: 30,
+				},
+			},
+		});
+
 		swiperEl.initialize();
+		swiperEl2.initialize();
 	</script>
 </MainLayout>
