@@ -11,6 +11,7 @@ import VideoBg from "./components/VideoBg.astro";
 import SliderCards from "./components/SliderCards.astro";
 import FooterLinks from "./components/FooterLinks.astro";
 import SolutionsHoverCards from "./components/SolutionsHoverCards.astro";
+import HomeContact from "./components/HomeContact.astro";
 ---
 
 <MainLayout>
@@ -27,6 +28,7 @@ import SolutionsHoverCards from "./components/SolutionsHoverCards.astro";
 	<VideoBg />
 	<SliderCards />
 	<SolutionsHoverCards />
+	<HomeContact />
 	
 	<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -82,7 +84,7 @@ import SolutionsHoverCards from "./components/SolutionsHoverCards.astro";
 
 			breakpoints: {
 				"@0.00": {
-					slidesPerView: 2,
+					slidesPerView: 2.1,
 					spaceBetween: 10,
 				},
 				"@0.75": {
@@ -90,11 +92,11 @@ import SolutionsHoverCards from "./components/SolutionsHoverCards.astro";
 					spaceBetween: 20,
 				},
 				"@1.00": {
-					slidesPerView: 2.7,
+					slidesPerView: 2.5,
 					spaceBetween: 40,
 				},
 				"@1.50": {
-					slidesPerView: 3.3,
+					slidesPerView: 2.7,
 					spaceBetween: 30,
 				},
 			},
