@@ -1,5 +1,30 @@
 ---
-
+const sliderCards = [
+    {
+        cardTitle : "See Why Customers Choose Us",
+        cardTextContent : "Check out an easy-to-scan comparison of how we outperform the competition on multiple fronts",
+        cardRedirectTitle : "Learn More",
+        cardRedirectLink : ""
+    },
+    {
+        cardTitle : "Building Resilience: 2024 Security Predictions for the Cloud",
+        cardTextContent : "A look into stealthy dangers of data poisoning in machine learning models, the complexities of securing APIs, and more",
+        cardRedirectTitle : "Read Blog",
+        cardRedirectLink : ""
+    },
+    {
+        cardTitle : "Diving Deep Into Quantum Computing",
+        cardTextContent : "An exploration of computing with quantum mechanics",
+        cardRedirectTitle : "Learn More",
+        cardRedirectLink : ""
+    },
+    {
+        cardTitle : "The Dynamic DoS Threat",
+        cardTextContent : "Insights into the complex cyber landscape",
+        cardRedirectTitle : "Read More",
+        cardRedirectLink : ""
+    },
+]
 ---
 <style is:inline>
 
@@ -22,25 +47,34 @@
 
 </style>
 <section class="sliderCards h-[80vh] bg-gradient-to-br from-[#032309] to-[#102049] py-4">
-    <div class="wrapper relative size-full gap-4 flex lg:flex-row flex-col justify-center items-center overflow-hidden">
+    <div class="wrapper relative size-full gap-4 flex justify-center items-center overflow-hidden">
+        <div class="container1368 lg:size-full xl:w-[1368px] w-full flex justify-center items-center lg:flex-row flex-col">
+            <div class="textContent w-full lg:px-0 px-5 lg:w-[30%] lg:ml-10 text-white">
+                <h2 class="text-4xl font-semibold">Cyber Security Finland
+                    <span class="block">Insights</span>
+                </h2>
+                <p class="mt-6">The latest research and expert perspectives</p>
+            </div>
         
-        <div class="textContent w-full lg:px-0 px-5 lg:w-[30%] lg:ml-10 text-white">
-            <h2 class="text-4xl font-semibold">Cyber Security Finland
-                <span class="block">Insights</span>
-            </h2>
-            <p class="mt-6">The latest research and expert perspectives</p>
+            <div class="sliderContainer w-full lg:px-0 px-5 lg:w-[70%] h-full">
+                <swiper-container class="cardsSwiper" init="false">
+                    {
+                        sliderCards.map((card) => (
+                            <swiper-slide>
+                                <div class="w-full justify-between text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3 py-7 flex flex-col">
+                                    <span>
+                                        <span class="block mt-3 text-xl font-semibold">{card.cardTitle}</span>
+                                        <span class="block mt-3">{card.cardTextContent}</span>
+                                    </span>
+
+                                    <a class="rounded-full w-fit bg-[#03eac1] items-center flex gap-3 px-8 py-2 font-bold shadow-lg" href={card.cardRedirectLink}>{card.cardRedirectTitle}</a>
+                                </div>
+                            </swiper-slide>
+                        ))                        
+                    }
+                </swiper-container>
+            </div>
         </div>
         
-        <div class="sliderContainer w-full lg:px-0 px-5 lg:w-[70%] h-full">
-            <swiper-container class="cardsSwiper" init="false">
-                {
-                    <swiper-slide><div class="w-full text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3">Text Content Goes Here</div></swiper-slide>
-                    <swiper-slide><div class="w-full text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3">Text Content Goes Here</div></swiper-slide>
-                    <swiper-slide><div class="w-full text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3">Text Content Goes Here</div></swiper-slide>
-                    <swiper-slide><div class="w-full text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3">Text Content Goes Here</div></swiper-slide>
-                    <swiper-slide><div class="w-full text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3">Text Content Goes Here</div></swiper-slide>
-                }
-            </swiper-container>
-        </div>
     </div>
 </section>
