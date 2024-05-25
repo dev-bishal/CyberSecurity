@@ -11,7 +11,8 @@ var brands=[
     "PAN-Customer-callouts-07_Resolution-life",
     "PAN-Customer-callouts-07_Salesforce",
     "PAN-Customer-callouts-07_Zespri"
-    ]
+    ];
+
 ---
 <style is:inline>
 
@@ -25,7 +26,6 @@ var brands=[
         background-position: center;
         background-size: cover;
         width: 300px;
-        height: 100px;
     }   
 
     swiper-container.brandsSwiper swiper-slide img {
@@ -40,8 +40,12 @@ var brands=[
             <h2 class="text-center uppercase text-white">Trusted by the Best</h2>
             <swiper-container class="brandsSwiper" init="false">
                 {
-                    brands.map((brand) =>(
-                        <swiper-slide class="mb-3"><img class="brandImg size-full bg-white rounded-md" src={"assets/images/" + brand + ".svg"}></swiper-slide>
+                    brands.map((brand, index) =>(
+                        <swiper-slide class="mb-3 flex justify-center items-center">
+                            <span class="size-[160px] flex justify-center items-center bg-center bg-contain bg-no-repeat" style={`background-image: url('assets/images/award-curve-${(index % 5) + 1}.svg');`}>
+                                <img class="brandImg w-[70%] rounded-md" src={"assets/images/" + brand + ".svg"} alt={"Award " + brand} />
+                            </span>
+                        </swiper-slide>
                     ))
                 }
             </swiper-container>
