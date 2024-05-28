@@ -1,0 +1,22 @@
+---
+interface Props {
+    accordianTitle? :string;
+    accordianTitleURL? :string;
+    extraClass? : string;
+}
+const {accordianTitle, accordianTitleURL="javascript:void(0)", extraClass} = Astro.props;
+---
+
+<div class="accordian w-full mt-4 mb-10" class:list={[
+    [extraClass]
+]}>
+    {
+        accordianTitle && 
+        <div class="headTitle md:cursor-none cursor-pointer mb-4 w-full flex justify-between items-center">
+            <a href={accordianTitleURL} class="pointer-events-none md:pointer-events-auto text font-semibold">{accordianTitle}</a>
+            <i class="fa-sharp fa-regular fa-angle-down transition-all ease-in-out duration-150 md:hidden block "></i>
+        </div>
+    }
+
+    <slot></slot>
+</div>

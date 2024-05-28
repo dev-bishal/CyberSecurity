@@ -42,17 +42,25 @@ const hoverCards = [
     .hidden-text{
         transition: max-height 0.3s ease, padding 0.3s ease;
     }
-    .card:hover {
-        width: 30%;
-        text-align: left;
-    }
-
-    .card:hover .hidden-text {
-        max-height: fit-content;
-        padding: 10px 0;
-    }
-    .card:hover .card-content {
-        align-items: normal;
+    
+    @media (min-width: 1024px) {
+        .card:hover {
+            width: 30%;
+            text-align: left;
+        }
+        .card:hover .hidden-text {
+            max-height: fit-content;
+            padding: 10px 0;
+        }
+        .card:hover .card-content {
+            align-items: normal;
+        }
+        .card:hover .card-header, .card:hover .card-header .iconFileSpan{
+            width: 100%;
+        }
+        .card:hover .card-headerLeft{
+            align-items: normal;
+        }
     }
 
 </style>
@@ -66,35 +74,52 @@ const hoverCards = [
                 <p class="my-6 text-4xl font-semibold">Stay ahead of any security challenge</p>
             </div>
     
-            <div class="hover-card-container flex justify-center items-center">
+            <div class="hover-card-container px-5 flex justify-center items-center lg:flex-row flex-col">
 
                 {
                     hoverCards.slice(0, 5).map((card, index)=>(
-                        <div class="card p-4 h-[70vh] flex justify-center items-center text-center bg-gradient-to-br from-[#085c9c] to-[#027252] overflow-hidden transition-all duration-300 ease-in-out w-[18%]"
+                        <div class="card p-4 px-6 w-full lg:w-[18%] lg:h-[70vh] flex justify-center items-center text-center bg-gradient-to-br from-[#085c9c] to-[#027252] overflow-hidden transition-all duration-300 ease-in-out"
                         class:list={
                             [
-                                (index >= 0 && index < 4) && "border-r border-white",
-                                index == 0 && "rounded-tl-xl rounded-bl-xl",
-                                index == 4 && "rounded-tr-xl rounded-br-xl",
+                                (index >= 0 && index < 4) && "lg:border-r lg:border-white",
+                                index == 0 && "rounded-tl-xl lg:rounded-bl-xl lg:rounded-tr-none rounded-tr-xl",
+                                index == 4 && "lg:rounded-tr-xl rounded-br-xl lg:rounded-bl-none rounded-bl-xl",
                             ]
                         }
                         >
-                            <div class="card-content flex flex-col items-center justify-center">
-                                <span class="border-b border-gray-300 pb-4 mb-3">
-                                    <img src={`/assets/images/${card.iconFile}`} alt={`hoverCards Icon ${card.cardTitle}`} class="size-14" />
-                                </span>
-                                <h3 class="text-xl font-semibold">{card.cardTitle}</h3>
-                                <div class="hidden-text max-h-0 overflow-hidden">
-                                    <p class="mb-3">{card.cardTextContent}</p>
-                                    <a class="rounded-full w-fit bg-[#03eac1] items-center flex gap-3 px-8 py-2 font-bold shadow-lg" href={card.cardRedirectLink}>{card.cardRedirectText}</a>
+                            <div class="card-content w-full flex flex-col items-center justify-center">
+                                <div class="card-header lg:cursor-none cursor-pointer flex lg:justify-center justify-between items-center lg:w-fit w-full">
+                                    <span class="card-headerLeft lg:w-full w-fit flex lg:flex-col flex-row items-center justify-center">
+                                        <span class="iconFileSpan lg:border-b border-gray-300 lg:pb-4 lg:mb-3 lg:pr-0 pr-3 w-fit">
+                                            <img src={`/assets/images/${card.iconFile}`} alt={`hoverCards Icon ${card.cardTitle}`} class="lg:size-14 size-10" />
+                                        </span>
+                                        <h3 class="lg:text-xl text-base font-semibold">{card.cardTitle}</h3>
+                                    </span>
+
+                                    <i class="fa-sharp fa-regular fa-angle-down lg:hidden block transition-all ease-in-out duration-150"></i>
+                                </div>
+                                <div class="hidden-text w-full max-h-0 overflow-hidden text-left">
+                                    <p class="my-6 mb-3">{card.cardTextContent}</p>
+                                    <a class="rounded-full lg:w-fit w-full bg-[#03eac1] flex lg:justify-normal justify-center items-center gap-3 px-8 py-2 font-bold shadow-lg" href={card.cardRedirectLink}>{card.cardRedirectText}</a>
                                 </div>
                             </div>
                         </div>
                     ))
                 }
-
             </div>
         </div>
     
     </div>
 </section>
+
+<script is:inline>
+    var allCardsHeader = document.querySelectorAll(".solutionCardsContainer .card .card-header");
+
+    allCardsHeader.forEach(CardsHeader => {
+        CardsHeader.addEventListener("click", ()=>{
+            CardsHeader.nextElementSibling.classList.toggle("max-h-0");
+            CardsHeader.nextElementSibling.classList.toggle("max-h-[175px]");
+            CardsHeader.children[1].classList.toggle("rotate-180");
+        })
+    });
+</script>
