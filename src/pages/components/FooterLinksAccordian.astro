@@ -1,0 +1,41 @@
+---
+interface Props {
+    accordianTitle? :string;
+    accordianTitleURL? :string;
+    extraClass? : string;
+}
+const {accordianTitle, accordianTitleURL="javascript:void(0)", extraClass} = Astro.props;
+---
+
+<style>
+    @media (max-width: 768px) {
+        .accordian .content{
+            max-height: 0;
+            overflow:hidden;
+            margin-bottom: 0;
+        }
+        .accordian .content.expand{
+            max-height: fit-content;
+            overflow:auto;
+            margin-bottom: 1.5rem/* 24px */;
+        }
+    }
+</style>
+
+<div class="accordian w-full" class:list={[
+    [extraClass]
+]}>
+    {
+        accordianTitle && 
+        <div class="headTitle md:cursor-none cursor-pointer mb-4 w-full flex justify-between items-center">
+            <a href={accordianTitleURL} class="pointer-events-none md:pointer-events-auto text font-semibold">{accordianTitle}</a>
+            <i class="fa-sharp fa-regular fa-angle-down transition-all ease-in-out duration-150 md:hidden block "></i>
+        </div>
+    }
+
+    <div class="content mb-6" class:list={[
+        [!accordianTitle && "expand"]
+    ]}>
+        <slot></slot>
+    </div>
+</div>

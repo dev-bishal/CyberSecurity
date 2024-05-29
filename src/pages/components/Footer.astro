@@ -5,9 +5,26 @@ import FooterLinks from "./FooterLinks.astro";
 ---
 <FooterLinks />
 
-<footer class="text-xs py-7 bg-gradient-to-r from-[#104939] to-[#083560] text-white">
-    <div class="wrapper w-full flex justify-center items-center">
-        <div class="container1320 lg:w-[1120px] flex justify-between gap-4 lg:flex-row flex-col">
+<footer class="text-xs py-7 bg-gradient-to-b from-[#072822] to-[#083560] text-white">
+    <div class="wrapper w-full flex flex-col gap-y-10 justify-center overflow-hidden items-center">
+        <div class="container1320 px-2 lg:w-[1120px] w-full flex justify-between gap-4 lg:flex-row flex-col">
+            <div class="brandValue flex flex-col gap-3 lg:w-[30%] w-full">
+                <img src="/assets/images/logo.png" alt="CyberSecurity Finland Logo" class="md:h-40 object-contain">
+                <p>We offer a range of customized IT consulting services focused on the alignment of business and IT.  We specialize in providing advice, planning and strategy services that will power you with the ability to derive additional business value from your IT.</p>
+            </div>
+
+            <div class="socialLinks lg:w-[30%] w-full flex justify-center items-center flex-col lg:mt-0 mt-3">
+                <span class="text text-xl">Let's connect on Social Media</span>
+                <ul class="flex gap-6 text-3xl text-gray-200">
+                    <li class="hover:text-gray-400"><a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="hover:text-gray-400"><a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li class="hover:text-gray-400"><a href="javascript:void(0);"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li class="hover:text-gray-400"><a href="javascript:void(0);"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li class="hover:text-gray-400"><a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container1320 lg:w-[1120px] w-full flex justify-between items-center gap-4 lg:flex-row flex-col-reverse border-t pt-3">
            <div class="left-sec my-auto text-center">
                 <nav class="w-max">
                     <ul class="flex gap-2">
@@ -28,4 +45,4 @@ import FooterLinks from "./FooterLinks.astro";
         </div>
     </div>
 </footer>
-<span class="hidden bg-[#000a229a] backdrop-blur-sm"></span>
+<span class="Not-needed md:pl-0 pl-4 Classes max-h-[175px] rotate-180 hidden bg-[#000a229a] backdrop-blur-sm"></span>
