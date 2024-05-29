@@ -7,7 +7,22 @@ interface Props {
 const {accordianTitle, accordianTitleURL="javascript:void(0)", extraClass} = Astro.props;
 ---
 
-<div class="accordian w-full mt-4 mb-10" class:list={[
+<style>
+    @media (max-width: 768px) {
+        .accordian .content{
+            max-height: 0;
+            overflow:hidden;
+            margin-bottom: 0;
+        }
+        .accordian .content.expand{
+            max-height: fit-content;
+            overflow:auto;
+            margin-bottom: 1.5rem/* 24px */;
+        }
+    }
+</style>
+
+<div class="accordian w-full" class:list={[
     [extraClass]
 ]}>
     {
@@ -18,5 +33,9 @@ const {accordianTitle, accordianTitleURL="javascript:void(0)", extraClass} = Ast
         </div>
     }
 
-    <slot></slot>
+    <div class="content mb-6" class:list={[
+        [!accordianTitle && "expand"]
+    ]}>
+        <slot></slot>
+    </div>
 </div>

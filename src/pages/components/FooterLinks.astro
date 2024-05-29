@@ -18,8 +18,9 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
     }
 </style>
 <!-- Accordion For Mobile -->
-<section class="footerLinks flex justify-center items-center">
-    <div class="container1320 lg:w-[1020px] lg:pt-14">
+<section class="footerLinks flex justify-center items-center text-white relative bg-gradient-to-b from-[#1a4e3d] to-[#115b4e]">
+    <div class="overlay absolute size-full bg-[#00000090] z-0"></div>
+    <div class="z-[1] container1320 lg:w-[1020px] lg:pt-14">
         <div class="wrapper flex w-full lg:flex-row flex-col lg:gap-40 gap-12 lg:px-0 py-5">
             <div class="content w-full px-5 flex xl:gap-4 md:gap-x-4 lg:gap-x-10 flex-wrap text-xs">
                 <div class="links-Holder xl:w-[63%] w-full">
@@ -30,7 +31,7 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
                     <div class="links-container overflow-hidden flex sm:gap-0 md:gap-4 flex-wrap">
                         <span class="xl:w-[22%] md:w-[23%] w-full">
 
-                            <FooterLinksAccordian accordianTitle="Network Security Platform">
+                            <FooterLinksAccordian accordianTitle="Network Security Platform" extraClass="md:pl-0 pl-4">
                                 <FooterLinksAccordian accordianTitle="CLOUD DELIVERED SECURITY SERVICES" extraClass="md:pl-0 pl-4">
                                     <ul class="flex flex-col gap-4">
                                         <li class="hover:underline"><a href="javascript:void(0)">Advanced Threat Prevention</a></li>
@@ -39,29 +40,28 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
                                         <li class="hover:underline"><a href="javascript:void(0)">IoT Security</a></li>
                                     </ul>
                                 </FooterLinksAccordian>
-                            </FooterLinksAccordian>
-                            
-                            <FooterLinksAccordian accordianTitle="Next-Generation Firewalls" extraClass="md:pl-0 pl-4">
-                                <ul class="flex flex-col gap-4">
-                                    <li class="hover:underline"><a href="javascript:void(0)">Hardware Firewalls</a></li>
-                                    <li class="hover:underline"><a href="javascript:void(0)">Strata Cloud Manager</a></li>
-                                </ul>
-                            </FooterLinksAccordian>
-
-                            <FooterLinksAccordian accordianTitle="SECURE ACCESS SERVICE EDGE" extraClass="md:pl-0 pl-4">
-                                <ul class="flex flex-col gap-4">
-                                    <li class="hover:underline"><a href="javascript:void(0)">Prisma Access</a></li>
-                                    <li class="hover:underline"><a href="javascript:void(0)">Prisma SD-WAN</a></li>
-                                    <li class="hover:underline"><a href="javascript:void(0)">Autonomous Digital Experience Management</a></li>
-                                    <li class="hover:underline"><a href="javascript:void(0)">Cloud Access Security Broker</a></li>
-                                    <li class="hover:underline"><a href="javascript:void(0)">Zero Trust Network Access</a></li>
-                                </ul>
+                                <FooterLinksAccordian accordianTitle="Next-Generation Firewalls" extraClass="md:pl-0 pl-4">
+                                    <ul class="flex flex-col gap-4">
+                                        <li class="hover:underline"><a href="javascript:void(0)">Hardware Firewalls</a></li>
+                                        <li class="hover:underline"><a href="javascript:void(0)">Strata Cloud Manager</a></li>
+                                    </ul>
+                                </FooterLinksAccordian>
+    
+                                <FooterLinksAccordian accordianTitle="SECURE ACCESS SERVICE EDGE" extraClass="md:pl-0 pl-4">
+                                    <ul class="flex flex-col gap-4">
+                                        <li class="hover:underline"><a href="javascript:void(0)">Prisma Access</a></li>
+                                        <li class="hover:underline"><a href="javascript:void(0)">Prisma SD-WAN</a></li>
+                                        <li class="hover:underline"><a href="javascript:void(0)">Autonomous Digital Experience Management</a></li>
+                                        <li class="hover:underline"><a href="javascript:void(0)">Cloud Access Security Broker</a></li>
+                                        <li class="hover:underline"><a href="javascript:void(0)">Zero Trust Network Access</a></li>
+                                    </ul>
+                                </FooterLinksAccordian>
                             </FooterLinksAccordian>
                         </span>
                         <span class="xl:w-[22%] md:w-[23%] w-full">
 
                             <FooterLinksAccordian accordianTitle="Code to Cloud Platform" extraClass="md:pl-0 pl-4">
-                                <ul class="flex flex-col gap-4">
+                                <ul class="flex flex-col gap-4 md:pl-0 pl-4">
                                     <li class="hover:underline"><a href="javascript:void(0)">Prisma Cloud</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Cloud-Native Application Protection Platform</a></li>
                                 </ul>
@@ -70,7 +70,7 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
                         </span>
                         <span class="xl:w-[22%] md:w-[23%] w-full">
                             <FooterLinksAccordian accordianTitle="AI-Driven Security Operations Platform" extraClass="md:pl-0 pl-4">
-                                <ul class="flex flex-col gap-4">
+                                <ul class="flex flex-col gap-4 md:pl-0 pl-4">
                                     <li class="hover:underline"><a href="javascript:void(0)">Cortex XDR</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Cortex XSOAR</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Cortex Xpanse</a></li>
@@ -83,7 +83,7 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
                         </span>
                         <span class="xl:w-[22%] md:w-[23%] w-full">
                             <FooterLinksAccordian accordianTitle="Threat Intel and Incident Response Services" extraClass="md:pl-0 pl-4">
-                                <ul class="flex flex-col gap-4">
+                                <ul class="flex flex-col gap-4 md:pl-0 pl-4">
                                     <li class="hover:underline"><a href="javascript:void(0)">Proactive Assessments</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Incident Response</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Transform Your Security Strategy</a></li>
@@ -100,7 +100,7 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
                     </span>
                     <div class="links-container overflow-hidden flex gap-4 flex-wrap">
                         <span class="w-full">
-                            <FooterLinksAccordian>
+                                <FooterLinksAccordian extraClass="md:pl-0 pl-4">
                                 <ul class="flex flex-col gap-4">
                                     <li class="hover:underline"><a href="javascript:void(0)">About Us</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Careers</a></li>
@@ -122,7 +122,7 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
                     </span>
                     <div class="links-container overflow-hidden flex gap-4 flex-wrap">
                         <span class="w-full">
-                            <FooterLinksAccordian>
+                            <FooterLinksAccordian extraClass="md:pl-0 pl-4">
                                 <ul class="flex flex-col gap-4">
                                     <li class="hover:underline"><a href="javascript:void(0)">Blog</a></li>
                                     <li class="hover:underline"><a href="javascript:void(0)">Communities</a></li>
@@ -145,7 +145,13 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
         </div>
     </div>
 </section>
-
+<span class="h-2 w-full flex hidden">
+    <span class="blocks w-[25%] bg-violet-400"></span>
+    <span class="blocks w-[25%] bg-indigo-400"></span>
+    <span class="blocks w-[25%] bg-blue-400"></span>
+    <span class="blocks w-[25%] bg-green-400"></span>
+    <span class="blocks w-[25%] bg-yellow-400"></span>
+</span>
 <script is:inline>
     var footerHeadings = document.querySelectorAll(".links-Holder .mainHeadTitle");
     var footerAccordianHeadings = document.querySelectorAll(".accordian .headTitle");
@@ -157,7 +163,9 @@ import FooterLinksAccordian from "./FooterLinksAccordian.astro";
 
     footerAccordianHeadings.forEach(heading => {
         heading.addEventListener("click", ()=>{
-            heading.nextElementSibling
+            heading.nextElementSibling.classList.toggle("expand");
         })
     });
+
+
 </script>
