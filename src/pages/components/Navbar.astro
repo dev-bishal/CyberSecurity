@@ -11,9 +11,9 @@
                     <img src="/assets/images/logo.png" class="lg:h-14 h-10 object-contain" alt="">
                 </a>
             </div>
-            <div class="middle-sec my-auto hidden lg:block">
+            <div class="middle-sec my-auto lg:pt-0 pt-20 lg:px-0 px-4 lg:block w-2/3 lg:relative fixed z-[11] right-0 top-0 lg:h-fit h-screen lg:bg-transparent bg-[#165754a7] lg:backdrop-blur-[-1] backdrop-blur-sm lg:shadow-none shadow-md shadow-black lg:translate-x-0 translate-x-full transition-all ease-in-out">
                 <nav>
-                    <ul class="flex gap-4 font-semibold">
+                    <ul class="flex gap-4 font-semibold lg:flex-row flex-col">
                         <li class="rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a href="javascript:void(0)">Services & Products</a>
                             <i class="fa-solid fa-angle-down text-xs"></i>
                         </li>
@@ -40,12 +40,20 @@
                     </ul>
                 </nav>
             </div>
-            <div class="mobileNav">
-                <div class="menuIcon lg:hidden block scale-x-[-1]"><i class="fa-duotone fa-bars-sort cursor-pointer text-xl"></i></div>
+            <div class="mobileNav relative size-7 flex justify-center items-center">
+                <div class="menuIcon absolute z-[11] top-0 lg:hidden block scale-x-[-1]"><i class="fa-duotone fa-bars-sort cursor-pointer text-xl"></i></div>
             </div>
         </div>
 
     </div>        
 </header>
-<nav class="MenuMenu lg:hidden block w-2/3 fixed z-[11] right-0 top-0 h-screen bg-[#165754a7] backdrop-blur-sm transition-all ease-in-out shadow-md shadow-black translate-x-full">
+<nav class="MenuMenu ">
 </nav>
+
+<script is:inline>
+    const menuBtn = document.querySelector(".menuIcon i");
+    const menuBtnContainer = document.querySelector(".middle-sec");
+    menuBtn.addEventListener("click", ()=>{
+        menuBtnContainer.classList.toggle("translate-x-full")
+    })
+</script>
