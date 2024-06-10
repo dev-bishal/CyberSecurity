@@ -1,10 +1,13 @@
 ---
+import data from "./data/siteData";
+const serviceContentData = data.textContent.Services1;
+const awardSectionData = serviceContentData.awardsSection;
 import PageHero from "./components/PageHero.astro";
 import MainLayout from "./layouts/MainLayout.astro";
 
 ---
 <MainLayout pageTitle="Services at CyberSecurity Finland">
-    <PageHero heading="Our Services" textContent="Protect your digital assets with our comprehensive cybersecurity services, offering robust solutions including threat detection, risk assessment, and incident response to safeguard your business against evolving cyber threats." imageFileName="bg(1).jpeg"></PageHero>
+    <PageHero heading={serviceContentData.header.heading} textContent={serviceContentData.header.textParagraph} imageFileName="bg(1).jpeg"></PageHero>
 
     <section class="Services bg-gradient-to-br from-[#032309] to-[#102049]">
         <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center" style="background-image: url('/assets/images/wave-3.png');">
@@ -12,9 +15,9 @@ import MainLayout from "./layouts/MainLayout.astro";
                 <div class="content-holder w-full text-white">
                     <div class="showcase w-full flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
                         <div class="part lg:w-[64%]">
-                            <h2 class="text-3xl font-bold">Optimize your security solutions</h2>
-                            <p class="mt-4">CyberSecurity Finland Services help you gain a deeper, broader use of your CyberSecurity technologies and products, built around every stage of the security lifecycle. Our experienced consultants and experts help you realize the full value of your security solutions and avoid the challenges that can lead to unexpected risks. We help ensure your security products are effectively deployed, integrated, assessed, and optimized in alignment with your security strategy.</p>
-                            <p class="mt-4">You need the right talent at the right time. Let us help you integrate your security products and align your security strategy to reach new levels of performance.</p>
+                            <h2 class="text-3xl font-bold">{serviceContentData.servicesGrid.title}</h2>
+                            <p class="mt-4">{serviceContentData.servicesGrid.textContent1}</p>
+                            <p class="mt-4">{serviceContentData.servicesGrid.textContent2}</p>
                         </div>
                         <div class="part lg:w-[34%] flex justify-center items-center">
                             <div class="card lg:w-full w-[350px] shadow-xl shadow-blue-900 flex flex-col bg-gradient-to-br from-green-500 to-blue-900">
@@ -25,7 +28,7 @@ import MainLayout from "./layouts/MainLayout.astro";
                                     <div class="flex justify-end">
                                         <p class="w-2/3 relative">
                                             <i class="fa-sharp fa-solid fa-comma text-blue-600 text-4xl absolute -top-5 -left-5"></i>
-                                            Continuous monitoring of networks, systems, and applications to identify and respond to security threats in real time.</p>
+                                            {serviceContentData.servicesGrid.rightCardText}</p>
                                     </div>
 
                                     <span class="px-12 py-11 flex justify-center items-center h-56 w-full mt-5 bg-cover bg-[url('/assets/images/imageBorder.png')]">
@@ -38,40 +41,20 @@ import MainLayout from "./layouts/MainLayout.astro";
                     </div>
 
                     <div class="awards-recognition w-full flex flex-col gap-3 text-center my-5">
-                        <h2 class="text-3xl font-bold">Industry recognition</h2>
-                        <p>CyberSecurity Finland is recognized as an industry leader by key analyst firms</p>
+                        <h2 class="text-3xl font-bold">{awardSectionData.title}</h2>
+                        <p>{awardSectionData.subText}</p>
 
                         <div class="awards-holder flex gap-3 w-full flex-wrap justify-center items-center mt-4">
-                            <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
-                                <p class="text-center">
-                                    <a href="">Editor's Choice for Extended Detection and Response (XDR) in 2023</a>
-                                </p>
-                                <img src="https://www.trellix.com/en-us/img/logos/top-infosec-innovator-winner-2023-badge.png" alt="award image" class="w-full h-40 py-3 object-contain">
-                            </div>
-                            <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
-                                <p class="text-center">
-                                    <a href="">2023 Cybersecurity Excellence Awards Gold Winner Endpoint Security (NA)</a>
-                                </p>
-                                <img src="https://www.trellix.com/en-us/img/logos/cybersecurity-award-2023-winner-gold.png" alt="award image" class="w-full h-40 py-3 object-contain">
-                            </div>
-                            <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
-                                <p class="text-center">
-                                    <a href="">SE Labs awards Trellix Email Security AAA and 100% Total Accuracy Ratings</a>
-                                </p>
-                                <img src="https://www.trellix.com/en-us/img/logos/se-labs-logo.svg" alt="award image" class="w-full h-40 py-3 object-contain">
-                            </div>
-                            <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
-                                <p class="text-center">
-                                    <a href="">Leader in the Gigaom Radar Extended Detection and Response (XDR)</a>
-                                </p>
-                                <img src="https://www.trellix.com/en-us/img/logos/gigaom-logo-dark.svg" alt="award image" class="w-full h-40 py-3 object-contain">
-                            </div>
-                            <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
-                                <p class="text-center">
-                                    <a href="">#1 Leading Solution with Gold Medal in the 2023 Info-Tech Data Quadrant for DLP</a>
-                                </p>
-                                <img src="https://www.trellix.com/en-us/img/logos/gold-medal-trellix-dlp-endpoint-2023.png" alt="award image" class="w-full h-40 py-3 object-contain">
-                            </div>
+                            {
+                                awardSectionData.awardCards.map((awardCard)=>(
+                                    <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
+                                        <p class="text-center">
+                                            <a href={awardCard.redirectPath}>{awardCard.awardTitle}</a>
+                                        </p>
+                                        <img src={awardCard.imageFile} alt="award image" class="w-full h-40 py-3 object-contain" />
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>

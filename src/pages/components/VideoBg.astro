@@ -1,5 +1,6 @@
 ---
-
+import data from "../data/siteData";
+const contentData = data.textContent.HomePage.VideoBgText.textContent;
 ---
 
 <section class="contactvideoBgSection">
@@ -24,26 +25,27 @@
 
         <div class="slide-container z-[2]] w-full h-full text-white flex justify-center items-center overflow-hidden absolute top-0">
             <div class="container1320 lg:w-[1020px] w-full h-full lg:pt-20 relative">
+
                 <div class="size-full slide active flex justify-center items-center">
                     <div class="content flex justify-center items-center">
-                        <span class="capitalize text-center text-4xl">Your threat landscape
-                            <span class="text-green-500 block lowercase">is always evolving.</span>
+                        <span class="capitalize text-center text-4xl">{contentData.slide1_Text1}
+                            <span class="text-green-500 block lowercase">{contentData.slide1_Text2}</span>
                         </span>
                     </div>
                 </div>
                 <div class="size-full slide flex justify-center items-center">
                     <div class="content flex justify-center items-center">
-                        <span class="capitalize text-center text-4xl">Sophisticated threats
-                            <span class="text-green-500 block lowercase">dominate today's headlines.</span>
+                        <span class="capitalize text-center text-4xl">{contentData.slide2_Text1}
+                            <span class="text-green-500 block lowercase">{contentData.slide2_Text2}</span>
                         </span>
                     </div>
                 </div>
                 <div class="size-full slide flex justify-center items-center">
                     <div class="content flex justify-center items-center">
                         <span class="capitalize text-center text-4xl">
-                            <span class='text-green-500'>Together</span>
-                             , we can protect
-                            <span class="block">against <span class='lowercase text-green-500'>what's next.</span></span>
+                            <span class='text-green-500'>{contentData.slide3_Text1}</span>
+                             {contentData.slide3_Text2}
+                            <span class="block">{contentData.slide3_Text3} <span class='lowercase text-green-500'>{contentData.slide3_Text4}</span></span>
                         </span>
                     </div>
                 </div>

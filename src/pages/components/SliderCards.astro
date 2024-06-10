@@ -1,30 +1,6 @@
 ---
-const sliderCards = [
-    {
-        cardTitle : "See Why Customers Choose Us",
-        cardTextContent : "Check out an easy-to-scan comparison of how we outperform the competition on multiple fronts",
-        cardRedirectTitle : "Learn More",
-        cardRedirectLink : ""
-    },
-    {
-        cardTitle : "Building Resilience: 2024 Security Predictions for the Cloud",
-        cardTextContent : "A look into stealthy dangers of data poisoning in machine learning models, the complexities of securing APIs, and more",
-        cardRedirectTitle : "Read Blog",
-        cardRedirectLink : ""
-    },
-    {
-        cardTitle : "Diving Deep Into Quantum Computing",
-        cardTextContent : "An exploration of computing with quantum mechanics",
-        cardRedirectTitle : "Learn More",
-        cardRedirectLink : ""
-    },
-    {
-        cardTitle : "The Dynamic DoS Threat",
-        cardTextContent : "Insights into the complex cyber landscape",
-        cardRedirectTitle : "Read More",
-        cardRedirectLink : ""
-    },
-]
+import data from "../data/siteData";
+const sliderContent = data.textContent.HomePage.SliderCards;
 ---
 <style is:inline>
 
@@ -50,16 +26,16 @@ const sliderCards = [
     <div class="wrapper relative size-full gap-4 flex justify-center items-center overflow-hidden">
         <div class="container1368 lg:size-full gap-5 xl:w-[1368px] w-full flex justify-center items-center lg:flex-row flex-col">
             <div class="textContent w-full lg:px-0 px-5 lg:w-[35%] lg:ml-16 text-white" data-aos="fade-right" data-aos-delay="500">
-                <h2 class="text-4xl font-semibold">Cyber Security Finland
-                    <span class="block">Insights</span>
+                <h2 class="text-4xl font-semibold">{sliderContent.heading}
+                    <span class="block">{sliderContent.heading2}</span>
                 </h2>
-                <p class="mt-6">The latest research and expert perspectives</p>
+                <p class="mt-6">{sliderContent.textParagraph}</p>
             </div>
         
             <div class="sliderContainer lg:h-full h-[500px] w-full lg:px-0 px-5 lg:w-[65%] " data-aos="fade-left" data-aos-delay="500">
                 <swiper-container class="cardsSwiper" init="false">
                     {
-                        sliderCards.map((card) => (
+                        sliderContent.sliderCardsContent.map((card) => (
                             <swiper-slide>
                                 <div class="w-full justify-between text-white bg-gradient-to-tr from-green-500 to-blue-500 h-[100%] rounded-lg p-3 py-7 flex flex-col">
                                     <span>

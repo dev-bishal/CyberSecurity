@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo";
+
 interface Props {
     pageTitle :string
     pageDescription : string
@@ -14,6 +16,37 @@ const {pageTitle, pageDescription} = Astro.props;
     
     <!-- Page Tags -->
     <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+    <!-- Astro SEO -->
+    <!-- nofollow and noindex -->
+    <SEO
+      
+      title={pageTitle}
+      description={pageDescription}
+      openGraph={{
+        basic: {
+          title: "A Very Descriptive Title",
+          type: "A type.",
+          image: "/assets/images/logo.png",
+        }
+      }}
+      twitter={{
+        creator: "@Ben"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/assets/images/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "/assets/images/logo.png",
+          },
+          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
+    />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription}>
 

@@ -1,41 +1,7 @@
 ---
-const hoverCards = [
-    {
-        iconFile : "ciso-icn.svg",
-        cardTitle : "CISO",
-        cardTextContent : "Security excellence is within reach. Discover market-leading XDR, dynamic ASRM, and purpose-build solutions to meet your needs today and tomorrow.",
-        cardRedirectText : "Learn More",
-        cardRedirectLink : ""
-    },
-    {
-        iconFile : "soc-manager-icn.svg",
-        cardTitle : "SOC Managers",
-        cardTextContent : "Overcome siloes, complexity, and your growing attack surface to stop adversaries faster with a unified cybersecurity platform.",
-        cardRedirectText : "Learn More",
-        cardRedirectLink : ""
-    },
-    {
-        iconFile : "cloud-secops-icn.svg",
-        cardTitle : "Cloud SecOps",
-        cardTextContent : "Gain full visibility and control to resolve multi-cloud complexity, so you can achieve compliance and secure cloud-native apps.",
-        cardRedirectText : "Learn More",
-        cardRedirectLink : ""
-    },
-    {
-        iconFile : "cloud-developer-icn.svg",
-        cardTitle : "Cloud Developer",
-        cardTextContent : "Balance security asks while delivering innovative, on-time apps so you can build securely—your way.",
-        cardRedirectText : "Learn More",
-        cardRedirectLink : ""
-    },
-    {
-        iconFile : "infrastructure-manager-icn.svg",
-        cardTitle : "Infrastructure Managers",
-        cardTextContent : "Evolve your security to protect more with less, enabling you to mitigate threats quickly and effectively.",
-        cardRedirectText : "See how",
-        cardRedirectLink : ""
-    }
-]
+import data from "../data/siteData";
+
+const expandCardsContent = data.textContent.HomePage.ExpandCards;
 
 ---
 <style>
@@ -68,17 +34,17 @@ const hoverCards = [
     
     <div class="wrapper relative size-full gap-4 flex flex-col justify-center items-center overflow-hidden">
         
-        <div class="container1320 lg:w-[1120px] pt-10" >
+        <div class="container1320 lg:w-[1120px] xl:w-[1440px] pt-10" >
             <div class="textContent w-full lg:px-0 px-5 lg:w-[50%] lg:ml-10" data-aos="fade-down" data-aos-delay="500">
-                <span class="uppercase">Solution by role</span>
-                <p class="my-6 text-4xl font-semibold">Stay ahead of any security challenge</p>
+                <span class="uppercase">{expandCardsContent.title}</span>
+                <p class="my-6 text-4xl font-semibold">{expandCardsContent.heading}</p>
             </div>
     
             <div class="hover-card-container px-5 flex justify-center items-center lg:flex-row flex-col" data-aos="fade-up" data-aos-delay="500">
 
                 {
-                    hoverCards.slice(0, 5).map((card, index)=>(
-                        <div class="card p-4 px-6 w-full lg:w-[18%] lg:h-[70vh] flex justify-center items-center text-center bg-gradient-to-br from-[#085c9c] to-[#027252] overflow-hidden transition-all duration-300 ease-in-out"
+                    expandCardsContent.hoverCards.slice(0, 5).map((card, index)=>(
+                        <div class="card p-4 px-6 w-full lg:w-[18%] lg:h-[70vh] xl:h-[50vh] flex justify-center items-center text-center bg-gradient-to-br from-[#085c9c] to-[#027252] overflow-hidden transition-all duration-300 ease-in-out"
                         class:list={
                             [
                                 (index >= 0 && index < 4) && "lg:border-r lg:border-white",

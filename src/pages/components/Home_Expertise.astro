@@ -1,5 +1,6 @@
 ---
-
+import data from "../data/siteData";
+const expertiseData = data.textContent.HomePage.Expertise;
 ---
 
 <section class="expertise relative">
@@ -14,11 +15,11 @@
             <div class="content-holder h-fit flex lg:flex-row flex-col lg:px-0 px-5 lg:gap-16 gap-4 text-white">
                 
                 <div class="content-left lg:mt-28 lg:w-[40%] flex flex-col gap-4 leading-8 lg:pr-12" data-aos="fade-right" data-aos-delay="500">
-                    <span class="text-2xl font-bold uppercase">Expertise</span>
-                    <h2 class="lg:text-5xl text-4xl font-bold w-2/3">Our Area 
-                        <span class="whitespace-nowrap">of Expertise</span>
+                    <span class="text-2xl font-bold uppercase">{expertiseData.title}</span>
+                    <h2 class="lg:text-5xl text-4xl font-bold w-2/3">{expertiseData.HeadingLine1} 
+                        <span class="whitespace-nowrap">{expertiseData.HeadingLine2}</span>
                     </h2>
-                    <p class="lg:text-2xl">We offer a range of strategy and implementation services to help you navigate the technology and cyber security landscape with confidence and efficiency.</p>
+                    <p class="lg:text-2xl">{expertiseData.textParagraph}</p>
                 </div>
 
                 <div class="content-middle w-[20%] hidden lg:block" data-aos="fade-up" data-aos-delay="500">
@@ -29,30 +30,20 @@
 
                 <div class="content-right lg:w-[40%]">
                     <ul class="flex flex-col gap-3">
-                        <li class="flex gap-3" data-aos="fade-right" data-aos-delay="500">
-                            <img class="size-10" src="/assets/images/internet-security.svg" alt="expertiseIcon">
-                            <div class="content">
-                                <h3 class="text-2xl pb-5">Assess</h3>
-                                <p class="text-base pb-3">LinearStack provides cybersecurity services, tackling ransomware and breaches. They offer assessments, penetration testing, purple teaming, emergency response training, and endpoint vulnerability evaluations.</p>
-                                <a class="font-bold hover:underline" href="javascript:void(0)">Learn More</a>
-                            </div>
-                        </li>
-                        <li class="flex gap-3 mt-6" data-aos="fade-right" data-aos-delay="500">
-                            <img class="size-10" src="/assets/images/infrastructure.svg" alt="expertiseIcon">
-                            <div class="content">
-                                <h3 class="text-2xl pb-5">Manage</h3>
-                                <p class="text-base pb-3">LinearStack offers advanced security solutions: firewall, URL filtering, secure gateways, DDoS protection, DNS security, and SIEM management, ensuring comprehensive protection against cyber threats.</p>
-                                <a class="font-bold hover:underline" href="javascript:void(0)">Learn More</a>
-                            </div>
-                        </li>
-                        <li class="flex gap-3 mt-6" data-aos="fade-right" data-aos-delay="500">
-                            <img class="size-10" src="/assets/images/digital-transformation.svg" alt="expertiseIcon">
-                            <div class="content">
-                                <h3 class="text-2xl pb-5">Respond</h3>
-                                <p class="text-base pb-3">LinearStack's services include Managed Detection & Response, proactive threat hunting, and 24x7 cyber vigilance. They offer specialized responses for incidents, breaches, cloud events, and phishing attacks, complemented by expert malware analysis to safeguard against evolving cyber threats.</p>
-                                <a class="font-bold hover:underline" href="javascript:void(0)">Learn More</a>
-                            </div>
-                        </li>
+
+                        {
+                            expertiseData.rightSide_Paragraphs.map((expertise)=>(
+                                <li class="flex gap-3" data-aos="fade-right" data-aos-delay="500">
+                                    <img class="size-10" src={"/assets/images/" + expertise.iconFile} alt="expertiseIcon" />
+                                    <div class="content">
+                                        <h3 class="text-2xl pb-5">{expertise.heading}</h3>
+                                        <p class="text-base pb-3">{expertise.textParagraph}</p>
+                                        <a class="font-bold hover:underline" href={expertise.redirectLink.URL}>{expertise.redirectLink.title}</a>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                        
                     </ul>
                 </div>
             </div>
