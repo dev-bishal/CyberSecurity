@@ -1,13 +1,19 @@
 ---
 import { SEO } from "astro-seo";
+import data from "../data/siteData.js";
 
 interface Props {
-    pageTitle :string
-    pageDescription : string
+    pageTitle ?:string
+    pageDescription ?: string,
+    pageType ?: string,
+    pageFeaturedImageUrl ?: string
 }
 
-const {pageTitle, pageDescription} = Astro.props;
+const {pageTitle = data.siteTitle, pageDescription = data.MetaDescription, pageType="website", pageFeaturedImageUrl=""} = Astro.props;
 
+var FinalTitle;
+if(data.SiteNameAfter_PageTitle) FinalTitle = `${pageTitle} - ${data.siteTitle}`;
+else FinalTitle = `${pageTitle}`;
 ---
 
 <head>
@@ -21,13 +27,13 @@ const {pageTitle, pageDescription} = Astro.props;
     <!-- nofollow and noindex -->
     <SEO
       
-      title={pageTitle}
+      title = {FinalTitle}
       description={pageDescription}
       openGraph={{
         basic: {
-          title: "A Very Descriptive Title",
-          type: "A type.",
-          image: "/assets/images/logo.png",
+          title: `${pageTitle}`,
+          type: `${pageType}`,
+          image: `${pageFeaturedImageUrl}`,
         }
       }}
       twitter={{
@@ -42,8 +48,8 @@ const {pageTitle, pageDescription} = Astro.props;
             name: "twitter:image",
             content: "/assets/images/logo.png",
           },
-          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
-          { name: "twitter:description", content: "Agent" },
+          { name: "twitter:title", content: `${pageTitle}` },
+          { name: "twitter:description", content: `${pageDescription}` },
         ],
       }}
     />

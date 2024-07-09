@@ -1,4 +1,5 @@
 var data = {
+    "SiteNameAfter_PageTitle" : true,
     "siteTitle": "CyberSecurity Finland | CSF SERVICES",
     "MetaDescription": "Be Secured against Insider Threats and Cyber Security Risks within your Organization",
 
@@ -11,7 +12,7 @@ var data = {
                     title: "Experiencing a Cyberattack? Get help now.",
                     link: "javascript:void(0);"
                 },
-                MainHeading: "The More companies trust Sophos for MDR than any other cybersecurity provider.",
+                MainHeading: "Cybersecurity Finland delivers top-notch cybersecurity solutions, ensuring businesses stay secure and resilient.",
                 CallToActionLinks : {
                     videoPlayButton : {
                         title : "See How",
@@ -28,36 +29,35 @@ var data = {
                 },
                 flipCards: [
                     {
-                        iconClass: "fa-light fa-circle-exclamation-check",
-                        frontHeadingTitle: "Instant Security Operations Center",
-                        frontContent: "Achieve superior cybersecurity outcomes through a fully-managed MDR service or self-managed security operations platform.",
-                        backTitle: "Instant Security Operations Center",
-                        backContent: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa optio omnis, quasi odit ipsa, nisi tenetur provident adipisci vel quos libero ut. Delectus fugit atque repudiandae beatae, odio libero expedita?",
-                        learnMoreLink: "javascript:void(0)"
+                        iconClass: "fa-duotone fa-gear-code",
+                        frontHeadingTitle: "Vulnerability Assessment",
+                        frontContent: "Our expert team conducts thorough vulnerability assessments and penetration tests to identify and mitigate potential security weaknesses in your systems.",
+                        backTitle: "& Penetration Testing (VAPT)",
+                        backContent: "By leveraging advanced tools and methodologies, we meticulously evaluate your IT infrastructure to uncover vulnerabilities that could be exploited by malicious actors.",
+                        learnMoreLink: "/services/VAPT"
                     },
                     {
-                        iconClass: "fa-light fa-circle-exclamation-check",
-                        frontHeadingTitle: "Instant Security Operations Center",
-                        frontContent: "Achieve superior cybersecurity outcomes through a fully-managed MDR service or self-managed security operations platform.",
-                        backTitle: "Instant Security Operations Center",
-                        backContent: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa optio omnis, quasi odit ipsa, nisi tenetur provident adipisci vel quos libero ut. Delectus fugit atque repudiandae beatae, odio libero expedita?",
+                        iconClass: "fa-solid fa-ballot-check",
+                        frontHeadingTitle: "Compliance",
+                        frontContent: "Stay compliant with industry regulations and standards through our compliance services, designed to help you meet legal and regulatory requirements efficiently and effectively.",
+                        backTitle: "Compliance",
+                        backContent: "Our comprehensive solutions cover various sectors, ensuring that your business adheres to the latest laws and guidelines. With our expert team, you can navigate complex regulatory landscapes with confidence, reduce risks, and focus on your core operations.",
                     },
                     {
-                        iconClass: "fa-light fa-circle-exclamation-check",
-                        frontHeadingTitle: "Instant Security Operations Center",
-                        frontContent: "Achieve superior cybersecurity outcomes through a fully-managed MDR service or self-managed security operations platform.",
-                        backTitle: "Instant Security Operations Center",
-                        backContent: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa optio omnis, quasi odit ipsa, nisi tenetur provident adipisci vel quos libero ut. Delectus fugit atque repudiandae beatae, odio libero expedita?",
-                        learnMoreLink: "javascript:void(0)"
+                        iconClass: "fa-duotone fa-shield-halved",
+                        frontHeadingTitle: "SOC Services",
+                        frontContent: "Gain peace of mind with Cybersecurity Finland's SOC services. Our Security Operations Center (SOC) proactively monitors your network, detects potential threats, and responds swiftly to ensure the security and resilience of your digital infrastructure. ",
+                        backTitle: "SOC Services",
+                        backContent: "Benefit from expert analysis,continuous threat monitoring, and actionable insights to fortify your defenses against evolving cyber threats.",
+                        learnMoreLink: "/services/soc-services"
                     },
                 ]
             },
             Services: {
                 heading: "Identities & Access, Intelligently Secured",
                 textParagraphs: [
-                    "Identities and their privileges are at the heart of every attack, and identity threats are hard to detect and increasingly complex. But complexity shouldn't mean compromise.",
-                    "BeyondTrust is the only identity security platform that allows you to detect threats across your entire identity estate and respond by controlling privileges, access, credentials, and secrets.",
-                    "With seamless integrations, unmatched discovery, and an identity-first data lake, we enable a zero-trust approach to least privilege, plus intelligent threat detection, to continuously strengthen your identity security posture.",
+                    "Identities and their privileges are at the heart of every attack, making identity threats increasingly complex and challenging to detect.",
+                    "At Cybersecurity Finland, we partner with BeyondTrust to provide the only identity security platform that allows you to detect threats across your entire identity estate. Our platform enables seamless integration, unmatched discovery, and an identity-first data lake to control privileges, access, credentials, and secrets. By adopting a zero-trust approach and leveraging intelligent threat detection, we continuously strengthen your identity security posture, ensuring your business remains secure against emerging threats",
                 ],
                 redirectLink: {
                     linkTitle: "See the Power of the Platform",
@@ -296,6 +296,12 @@ var data = {
                     },
                 ]
             }
+        },
+        Services2: {
+            header : {
+                heading : "We believe in…",
+                textParagraph : "We created Cybersecurity Finland to make sense of complex cybersecurity. Your own advanced Security Operations Platform with central vision and a single Cyber-Brain™ is the only way to really see and understand all events, implications, and actions.",
+            },
         }
     }
 }
