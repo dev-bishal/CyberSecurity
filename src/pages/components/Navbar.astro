@@ -14,26 +14,26 @@
             <div class="middle-sec my-auto lg:pt-0 pt-20 lg:px-0 px-4 lg:block w-2/3 lg:relative fixed z-[11] right-0 top-0 lg:h-fit h-screen lg:bg-transparent bg-[#165754a7] lg:backdrop-blur-[-1] backdrop-blur-sm lg:shadow-none shadow-md shadow-black lg:translate-x-0 translate-x-full transition-all ease-in-out">
                 <nav>
                     <ul class="flex gap-4 font-semibold lg:flex-row flex-col">
-                        <li class="rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a href="javascript:void(0)">Services & Products</a>
-                            <i class="fa-solid fa-angle-down text-xs"></i>
+                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.flipCards-holder')">Services & Products</a>
+                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
                         </li>
-                        <li class="rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a href="javascript:void(0)">Solutions</a>
-                            <i class="fa-solid fa-angle-down text-xs"></i>
+                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.expertise')">Expertise</a>
+                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
                         </li>
-                        <li class="rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a href="javascript:void(0)">Partners</a>
-                            <i class="fa-solid fa-angle-down text-xs"></i>
+                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.trustedBrandsSection')">Partners</a>
+                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
                         </li>
-                        <li class="rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a href="javascript:void(0)">About</a>
-                            <i class="fa-solid fa-angle-down text-xs"></i>
+                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.solutionCardsContainer')">Security Challenge</a>
+                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
                         </li>
-                        <li class="rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a href="javascript:void(0)">Support</a>
-                            <i class="fa-solid fa-angle-down text-xs"></i>
-                        </li>
+                        <!-- <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('')">Support</a>
+                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
+                        </li> -->
                     </ul>
                 </nav>
             </div>
             <div class="right-sec my-auto hidden lg:block">
-                <nav>
+                <nav class="hidden">
                     <ul class="flex gap-7">
                         <li><span class="cursor-pointer"><i class="fa-solid fa-magnifying-glass"></i></span></li>
                         <li><span class="cursor-pointer"><i class="fa-regular fa-globe"></i></span></li>

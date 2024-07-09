@@ -11,16 +11,21 @@ const flipCards = data.textContent.HomePage.top.flipCards;
     <div class="wrapper relative w-full flex justify-center items-center z-[2] ">
         <div class="container1320 lg:w-[1320px] pt-20" data-aos="fade-up" data-aos-delay="500">
             <span class="w-full flex flex-col justify-center items-center lg:px-0 px-3">
-                <a class="rounded-full px-8 py-2 font-bold bg-[#2c6857] text-sm lg:text-base text-center shadow-slate-700 shadow-lg" href={data.textContent.HomePage.top.topLink.link}>{data.textContent.HomePage.top.topLink.title} <i class="fa-solid fa-angle-right text-xs"></i></a> <!-- bg-blue-950 -->
+                <a class="rounded-full px-8 py-2 font-bold bg-[#2c6857] text-sm lg:text-base text-center shadow-slate-700 shadow-lg" 
+                href={
+                    data.textContent.HomePage.top.topLink.link != null 
+                     && data.textContent.HomePage.top.topLink.link || null
+                    }
+                    >{data.textContent.HomePage.top.topLink.title} <i class="hidden fa-solid fa-angle-right text-xs"></i></a> <!-- bg-blue-950 -->
 
                 <h1 class="lg:text-5xl text-4xl font-bold text-center mt-28 lg:px-52 lg:leading-[70px] leading-10">{data.textContent.HomePage.top.MainHeading}</h1>
 
-                <span class="flex gap-2 capitalize my-6">
+                <span class="flex gap-2 capitalize my-6 hidden">
                     <a class="rounded-full border-2 border-white items-center flex gap-3 px-8 py-2 font-bold shadow-lg" href={data.textContent.HomePage.top.CallToActionLinks.videoPlayButton.redirectLink}>{data.textContent.HomePage.top.CallToActionLinks.videoPlayButton.title} <i class="fa-regular fa-circle-play"></i></a>
                     <a class="rounded-full border-2 border-white items-center flex gap-3 px-8 py-2 font-bold shadow-lg bg-white text-[#000A22]" href={data.textContent.HomePage.top.CallToActionLinks.learnMoreButton.redirectLink}>{data.textContent.HomePage.top.CallToActionLinks.learnMoreButton.title}</a>
                 </span>
 
-                <a class="font-bold hover:underline" href={data.textContent.HomePage.top.CallToActionLinks.textLink.redirectLink}>{data.textContent.HomePage.top.CallToActionLinks.textLink.title} <i class="fa-solid fa-angle-right text-xs"></i></a>
+                <a class="font-bold hover:underline hidden" href={data.textContent.HomePage.top.CallToActionLinks.textLink.redirectLink}>{data.textContent.HomePage.top.CallToActionLinks.textLink.title} <i class="fa-solid fa-angle-right text-xs"></i></a>
             </span>
 
             <div class="flipCards-holder lg:px-0 px-5 flex lg:flex-row flex-wrap gap-6 mt-24 my-6 justify-center text-white w-full">

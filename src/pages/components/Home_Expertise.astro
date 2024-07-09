@@ -35,10 +35,14 @@ const expertiseData = data.textContent.HomePage.Expertise;
                             expertiseData.rightSide_Paragraphs.map((expertise)=>(
                                 <li class="flex gap-3" data-aos="fade-right" data-aos-delay="500">
                                     <img class="size-10" src={"/assets/images/" + expertise.iconFile} alt="expertiseIcon" />
-                                    <div class="content">
+                                    <div class="content mb-5">
                                         <h3 class="text-2xl pb-5">{expertise.heading}</h3>
                                         <p class="text-base pb-3">{expertise.textParagraph}</p>
-                                        <a class="font-bold hover:underline" href={expertise.redirectLink.URL}>{expertise.redirectLink.title}</a>
+                                        {
+                                            expertise.redirectLink.isDisable == true 
+                                            ? <a class="font-bold hover:underline opacity-0" href={expertise.redirectLink.URL}>{expertise.redirectLink.title}</a>
+                                            : <a class="font-bold hover:underline" href={expertise.redirectLink.URL}>{expertise.redirectLink.title}</a>
+                                        }
                                     </div>
                                 </li>
                             ))
