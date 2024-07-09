@@ -14,7 +14,7 @@ import SolutionsHoverCards from "./components/SolutionsHoverCards.astro";
 import HomeContact from "./components/HomeContact.astro";
 ---
 
-<MainLayout>
+<MainLayout pageTitle="Home">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	
 	<HomeHero />
@@ -36,6 +36,11 @@ import HomeContact from "./components/HomeContact.astro";
 			disable: "mobile",
 		});
 
+		function bringToView(sectionElement){
+		   	element = document.querySelector(sectionElement);
+		   	element.scrollIntoView();
+		}
+
 		const swiperEl = document.querySelector(
 			".trustedBrandsSection swiper-container",
 		);
@@ -52,7 +57,7 @@ import HomeContact from "./components/HomeContact.astro";
 				disableOnInteraction: false,
 			},
 			speed: "3500",
-			slidesPerView: 6,
+			slidesPerView: 2,
 			spaceBetween: 30,
 
 			breakpoints: {
@@ -61,15 +66,15 @@ import HomeContact from "./components/HomeContact.astro";
 					spaceBetween: 10,
 				},
 				"@0.75": {
-					slidesPerView: 3,
+					slidesPerView: 2,
 					spaceBetween: 20,
 				},
 				"@1.00": {
-					slidesPerView: 4,
+					slidesPerView: 2,
 					spaceBetween: 40,
 				},
 				"@1.50": {
-					slidesPerView: 6,
+					slidesPerView: 2,
 					spaceBetween: 30,
 				},
 			},

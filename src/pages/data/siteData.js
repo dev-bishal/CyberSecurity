@@ -10,7 +10,7 @@ var data = {
             top: {
                 topLink: {
                     title: "Experiencing a Cyberattack? Get help now.",
-                    link: "javascript:void(0);"
+                    link: null
                 },
                 MainHeading: "Cybersecurity Finland delivers top-notch cybersecurity solutions, ensuring businesses stay secure and resilient.",
                 CallToActionLinks : {
@@ -73,27 +73,30 @@ var data = {
                 rightSide_Paragraphs: [
                     {
                         heading: "Assess",
-                        textParagraph: "LinearStack provides cybersecurity services, tackling ransomware and breaches. They offer assessments, penetration testing, purple teaming, emergency response training, and endpoint vulnerability evaluations.",
+                        textParagraph: "Cybersecurity Finland provides cybersecurity services, tackling ransomware and breaches. They offer assessments, penetration testing, purple teaming, emergency response training, and endpoint vulnerability evaluations.",
                         iconFile: "internet-security.svg",
                         redirectLink: {
+                            isDisable: true,
                             title: "Learn More",
                             URL: "javascript:void(0)"
                         }
                     },
                     {
                         heading: "Manage",
-                        textParagraph: "LinearStack offers advanced security solutions: firewall, URL filtering, secure gateways, DDoS protection, DNS security, and SIEM management, ensuring comprehensive protection against cyber threats.",
+                        textParagraph: "Cybersecurity Finland offers advanced security solutions: firewall, URL filtering, secure gateways, DDoS protection, DNS security, and SIEM management, ensuring comprehensive protection against cyber threats.",
                         iconFile: "infrastructure.svg",
                         redirectLink: {
+                            isDisable: true,
                             title: "Learn More",
                             URL: "javascript:void(0)"
                         }
                     },
                     {
                         heading: "Respond",
-                        textParagraph: "LinearStack's services include Managed Detection & Response, proactive threat hunting, and 24x7 cyber vigilance. They offer specialized responses for incidents, breaches, cloud events, and phishing attacks, complemented by expert malware analysis to safeguard against evolving cyber threats.",
+                        textParagraph: "Cybersecurity Finland's services include Managed Detection & Response, proactive threat hunting, and 24x7 cyber vigilance. They offer specialized responses for incidents, breaches, cloud events, and phishing attacks, complemented by expert malware analysis to safeguard against evolving cyber threats.",
                         iconFile: "digital-transformation.svg",
                         redirectLink: {
+                            isDisable: true,
                             title: "Learn More",
                             URL: "javascript:void(0)"
                         }
@@ -105,20 +108,20 @@ var data = {
                 textParagraph: "CyberSecurity's IR approach combines the industry-leading CyberSecurity Finland® platform along with an experienced team of responders to provide the following",
                 rightSide_Paragraphs: [
                     {
-                        title: "Speed and efficacy",
-                        textParagraph: "CrowdStrike consultants’ skills and experience, combined with proven methodology and technology, allow the team to respond and contain incidents faster and more efficiently. The result: fewer hours incurred, less business interruption and lower costs to you."
+                        title: "Minimizing Damage",
+                        textParagraph: "Effective incident response helps in quickly identifying and mitigating security breaches, reducing the impact and extent of damage caused by cyberattacks. This limits the potential loss of sensitive data and minimizes operational disruptions."
                     },
                     {
-                        title: "Intelligence-led investigation",
-                        textParagraph: "The IR team is supported throughout the response by the CrowdStrike Intelligence team. As a pioneer in adversary analysis, it helps identify adversaries present in the environment, enabling the IR team to quickly and efficiently contain the incident."
+                        title: "Preserving Business Continuity",
+                        textParagraph: "By rapidly addressing and resolving security incidents, organizations can maintain business operations without significant interruptions. This ensures that critical services remain available and helps maintain customer trust and satisfaction."
                     },
                     {
-                        title: "Tailored approach",
-                        textParagraph: "CrowdStrike partners with you to develop a plan that takes into consideration your operational needs, as well as existing investments and resources, ensuring a thorough investigation and a customized remediation action plan."
+                        title: "Regulatory Compliance",
+                        textParagraph: "Incident response helps organizations comply with legal and regulatory requirements by ensuring proper documentation and reporting of security incidents. This can protect the organization from legal penalties and maintain its reputation."
                     },
                     {
-                        title: "Tools and technology",
-                        textParagraph: "The same Falcon endpoint technology, cyber threat intelligence and proactive managed hunting services used in the IR investigation are available to you in the future, ensuring that you can both improve your security posture and stop future breaches."
+                        title: "Improving Security Posture",
+                        textParagraph: "An effective incident response process provides valuable insights into vulnerabilities and weaknesses in the organization's security infrastructure. This information can be used to strengthen defenses, improve security policies, and enhance overall cybersecurity measures."
                     }
                 ],
             },
@@ -129,6 +132,7 @@ var data = {
                         title: "Partner with us",
                         textParagraph: "Leverage the first cloud-based security operations platform to give your clients world-class cybersecurity services.",
                         redirectLink: {
+                            isDisable: false,
                             title: "Learn More",
                             URL: "javascript:void(0)"
                         }
@@ -138,6 +142,7 @@ var data = {
                         title: "Join our team",
                         textParagraph: "Join us in a journey of innovation and discovery, as we shape the future of cybersecurity operations.",
                         redirectLink: {
+                            isDisable: false,
                             title: "See openings",
                             URL: "javascript:void(0)"
                         }
@@ -147,8 +152,9 @@ var data = {
                         title: "Contact Us",
                         textParagraph: "Ready to speak to a human? feedback? We're always on a quest to improve so please share your thoughts.",
                         redirectLink: {
+                            isDisable: true,
                             title: "Contact Us",
-                            URL: "javascript:void(0)"
+                            URL: "/contact"
                         }
                     }
                 ]
@@ -156,17 +162,20 @@ var data = {
             TrustedBrands : {
                 heading : "Trusted by the Best",
                 brands : [
-                    "PAN-Customer-callouts-07_ADT",
-                    "PAN-Customer-callouts-07_AutoDesk",
-                    "PAN-Customer-callouts-07_Better-mortgage",
-                    "PAN-Customer-callouts-07_Caesar",
-                    "PAN-Customer-callouts-07_Entel-telefonia",
-                    "PAN-Customer-callouts-07_Envision-racing",
-                    "PAN-Customer-callouts-07_Grupo-bimbo",
-                    "PAN-Customer-callouts-07_Michelin",
-                    "PAN-Customer-callouts-07_Resolution-life",
-                    "PAN-Customer-callouts-07_Salesforce",
-                    "PAN-Customer-callouts-07_Zespri"
+                    "trustBrand (1)",
+                    "trustBrand (2)",
+                    "trustBrand (3)"
+                    // "PAN-Customer-callouts-07_ADT",
+                    // "PAN-Customer-callouts-07_AutoDesk",
+                    // "PAN-Customer-callouts-07_Better-mortgage",
+                    // "PAN-Customer-callouts-07_Caesar",
+                    // "PAN-Customer-callouts-07_Entel-telefonia",
+                    // "PAN-Customer-callouts-07_Envision-racing",
+                    // "PAN-Customer-callouts-07_Grupo-bimbo",
+                    // "PAN-Customer-callouts-07_Michelin",
+                    // "PAN-Customer-callouts-07_Resolution-life",
+                    // "PAN-Customer-callouts-07_Salesforce",
+                    // "PAN-Customer-callouts-07_Zespri"
                     ]
             },
             VideoBgText: {
@@ -218,36 +227,41 @@ var data = {
                 hoverCards : [
                     {
                         iconFile : "ciso-icn.svg",
-                        cardTitle : "CISO",
-                        cardTextContent : "Security excellence is within reach. Discover market-leading XDR, dynamic ASRM, and purpose-build solutions to meet your needs today and tomorrow.",
+                        cardTitle : "Threat Intelligence Services",
+                        cardTextContent : "Proactive monitoring and analysis of emerging threats and vulnerabilities tailored to your organization's industry and specific risks.",
+                        cardHasLink : false,
                         cardRedirectText : "Learn More",
                         cardRedirectLink : ""
                     },
                     {
                         iconFile : "soc-manager-icn.svg",
-                        cardTitle : "SOC Managers",
-                        cardTextContent : "Overcome siloes, complexity, and your growing attack surface to stop adversaries faster with a unified cybersecurity platform.",
+                        cardTitle : "Penetration Testing (Pen Testing)",
+                        cardTextContent : "Conducting simulated attacks on your systems and networks to identify weaknesses before malicious actors can exploit them.",
+                        cardHasLink : false,
                         cardRedirectText : "Learn More",
                         cardRedirectLink : ""
                     },
                     {
                         iconFile : "cloud-secops-icn.svg",
-                        cardTitle : "Cloud SecOps",
-                        cardTextContent : "Gain full visibility and control to resolve multi-cloud complexity, so you can achieve compliance and secure cloud-native apps.",
+                        cardTitle : "Security Awareness Training",
+                        cardTextContent : "Educating employees on best practices for cybersecurity, including recognizing phishing attempts, handling sensitive data, and maintaining secure work habits.",
+                        cardHasLink : false,
                         cardRedirectText : "Learn More",
                         cardRedirectLink : ""
                     },
                     {
                         iconFile : "cloud-developer-icn.svg",
-                        cardTitle : "Cloud Developer",
-                        cardTextContent : "Balance security asks while delivering innovative, on-time apps so you can build securely—your way.",
+                        cardTitle : "Vulnerability Assessment",
+                        cardTextContent : "Systematic evaluation of your IT infrastructure to identify and prioritize vulnerabilities that could be exploited by attackers.",
+                        cardHasLink : false,
                         cardRedirectText : "Learn More",
                         cardRedirectLink : ""
                     },
                     {
                         iconFile : "infrastructure-manager-icn.svg",
-                        cardTitle : "Infrastructure Managers",
-                        cardTextContent : "Evolve your security to protect more with less, enabling you to mitigate threats quickly and effectively.",
+                        cardTitle : "Incident Response Planning and Management",
+                        cardTextContent : "Developing and implementing a comprehensive incident response plan to ensure a swift and effective response to security incidents, minimizing their impact on your organization.",
+                        cardHasLink : false,
                         cardRedirectText : "See how",
                         cardRedirectLink : ""
                     }

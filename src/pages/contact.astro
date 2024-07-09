@@ -1,3 +1,69 @@
 ---
-
+import PageHero from "./components/PageHero.astro";
+import MainLayout from "./layouts/MainLayout.astro";
 ---
+
+<MainLayout pageTitle="Contact Us">
+    <PageHero
+        heading="Contact Us"
+        textContent="We'd love to hear from you! Whether you have questions, feedback, or need assistance, our team is here to help. Please fill out the form below, and we'll get back to you as soon as possible. Thank you for getting in touch with us!"
+        imageFileName="bgImg2.webp"
+    />
+    
+    <section class="partners bg-gradient-to-br to-[#072822] from-[#000910]">
+        <div class="wrapper p-10 lg:px-20 gap-5 w-full flex flex-col lg:flex-row justify-between text-white">
+            <div class="left w-full lg:w-1/2 side flex gap-3 items-start justify-center flex-col">
+                <span class="ContentHeading text-4xl font-extrabold capitalize">
+                    Feel free to Contact & Get in Touch!
+                </span>
+                <span class="ContentPara">
+                    Your connection with us is just a click away. Whether you have inquiries, require assistance, or want to explore how Brandverse can transform your digital presence, we're here for you. Our dedicated team is eager to listen and collaborate, turning your vision into reality. Feel free to reach out through the form below, drop us an email, or connect via phone. We look forward to the opportunity to assist you on your journey to digital success.
+                </span>
+
+                <a
+                class="p-3 flex items-center gap-5 border border-dashed border-green-500 rounded-full w-full" 
+                href="mailto:support@CyberSecurityFinland.com">
+                    <i class="h-5 w-5 text-green-600 bg-white p-5 flex justify-center items-center rounded-full fa-light fa-envelopes-bulk"></i>
+                    <span class="flex gap-1 flex-col">
+                        <span class="font-bold">Email Address:</span>
+                        <span>support@CyberSecurityFinland.com</span>
+                    </span>
+                </a>
+                
+            </div>
+            <div class="right w-full lg:w-1/2 side flex gap-3">
+                <div class="sections w-full flex gap-3 flex-col">
+                    <form action="https://formspree.io/f/mblrrknq" method="POST">
+                      <label>
+                        First Name:
+                        <input type="text" class="text-black bg-white rounded-full w-full p-3" name="first_name" required>
+                      </label>
+                      <br>
+                      <label>
+                        Last Name:
+                        <input type="text" class="text-black bg-white rounded-full w-full p-3" name="last_name" required>
+                      </label>
+                      <br>
+                      <label>
+                        Company Name:
+                        <input type="text" class="text-black bg-white rounded-full w-full p-3" name="company_name">
+                      </label>
+                      <br>
+                      <label>
+                        Your Email:
+                        <input type="email" class="text-black bg-white rounded-full w-full p-3" name="email" required>
+                      </label>
+                      <br>
+                      <label>
+                        Your Message:
+                        <textarea class="text-black bg-white rounded-lg w-full p-3 h-40" name="message" required></textarea>
+                      </label>
+                      <br>
+                      <button class="border-[#10db74] border text-white rounded-full px-3 py-2 bg-[#10db74] hover:bg-[#368f63] hover:shadow-[#10db74] hover:shadow-2xl w-fit" type="submit">Submit Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </form>
+    </section>
+</MainLayout>

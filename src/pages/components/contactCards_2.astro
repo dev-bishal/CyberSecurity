@@ -6,9 +6,10 @@ interface Props {
     linkText : string,
     linkUrl : string,
     isBordered?: boolean
+    isLinkAvailable ?: boolean
 }
 
-const {title, textContent, iconImageFile, linkText, linkUrl, isBordered=false} = Astro.props;
+const {title, textContent, iconImageFile, linkText, linkUrl, isBordered=false, isLinkAvailable=false} = Astro.props;
 ---
 
 <div class="card flex flex-col justify-between gap-8 p-6 lg:w-[33%]"
@@ -20,6 +21,9 @@ class:list={
         <h2 class="text-[2rem] lead font-bold">{title}</h2>
         <p class="leading-7">{textContent}</p>
     </div>
-    <a class="rounded-full w-fit bg-[#03eac1] items-center flex gap-3 px-8 py-2 font-bold shadow-lg"
-        href={linkUrl}>{linkText}</a>
+    {
+        isLinkAvailable &&
+        <a class="rounded-full w-fit bg-[#03eac1] items-center flex gap-3 px-8 py-2 font-bold shadow-lg"
+            href={linkUrl}>{linkText}</a>
+    }
 </div>

@@ -66,7 +66,10 @@ const expandCardsContent = data.textContent.HomePage.ExpandCards;
                                 </div>
                                 <div class="hidden-text w-full max-h-0 overflow-hidden text-left">
                                     <p class="my-6 mb-3">{card.cardTextContent}</p>
-                                    <a class="rounded-full lg:w-fit w-full bg-[#03eac1] flex lg:justify-normal justify-center items-center gap-3 px-8 py-2 font-bold shadow-lg" href={card.cardRedirectLink}>{card.cardRedirectText}</a>
+                                    {
+                                        card.cardHasLink && 
+                                        <a class="rounded-full lg:w-fit w-full bg-[#03eac1] flex lg:justify-normal justify-center items-center gap-3 px-8 py-2 font-bold shadow-lg" href={card.cardRedirectLink}>{card.cardRedirectText}</a>
+                                    }
                                 </div>
                             </div>
                         </div>

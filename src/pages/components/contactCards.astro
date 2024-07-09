@@ -16,6 +16,7 @@ import ContactCards2 from "./contactCards_2.astro";
                             iconImageFile = {content.iconFile}
                             title={content.title}
                             textContent={content.textParagraph}
+                            isLinkAvailable = {content.redirectLink.isDisable}
                             linkText={content.redirectLink.title}
                             linkUrl={content.redirectLink.URL} 
                             isBordered={index == 1 && true}
