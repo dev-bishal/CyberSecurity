@@ -1,0 +1,133 @@
+---
+
+---
+
+<script is:inline>
+    document.addEventListener("scroll", ()=>{
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        if (scrollY > windowHeight / 2) {
+            document.querySelector(".triforce__left").style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
+            document.querySelector(".triforce__right").style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
+            document.querySelector(".triforce__bottom").style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
+        } else {
+            document.querySelector(".triforce__left").style.transform = 'matrix(1, 0, 0, 1, -50, -50)';
+            document.querySelector(".triforce__right").style.transform = 'matrix(1, 0, 0, 1, 50, -50)';
+            document.querySelector(".triforce__bottom").style.transform = 'matrix(1, 0, 0, 1, 25, 25)';
+        }
+    });
+</script>
+<div class="svgHolder px-10">
+    <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1111 482"
+        style="enable-background:new 0 0 1111 482;"
+        xml:space="preserve"
+    >
+        <style type="text/css">
+            .tf_st0 {
+                fill: #3d4b85; /* #1B1B1B */
+            }
+            .tf_st1 {
+                fill: #ffffff;
+            }
+            .tf_st2 {
+                fill: #03eac1;
+            }
+            .tf_st3 {
+                fill: #236c5f;
+            }
+        </style>
+        <g
+            class="triforce__right transition-all duration-200 ease-in-out"
+            data-svg-origin="553.5 0"
+            style="transform-origin: 0px 0px; transform: matrix(1, 0, 0, 1, 50, -50);"
+        >
+            <polygon class="tf_st0" points="553.5,0 1111,482 1111,0 	"></polygon>
+            <text
+                x="680"
+                y="80"
+                fill="#fff"
+                class="title text-3xl font-semibold">Intuition</text
+            >
+            <text
+                x="800"
+                y="50"
+                fill="#03EAC1"
+                class="desc text-[23px] font-extralight"
+            >
+                <tspan x="850" dy="1.2em">Results are </tspan>
+                <tspan x="850" dy="1.2em">optimized when </tspan>
+                <tspan x="850" dy="1.2em">the technologies, </tspan>
+                <tspan x="850" dy="1.2em">tools, and</tspan>
+                <tspan x="850" dy="1.2em">communication we</tspan>
+                <tspan x="850" dy="1.2em">we use simply make </tspan>
+                <tspan x="850" dy="1.2em">sense</tspan>
+            </text>
+        </g>
+
+        <g
+            class="triforce__left transition-all duration-200 ease-in-out"
+            data-svg-origin="0 0"
+            style="transform-origin: 0px 0px; transform: matrix(1, 0, 0, 1, -50, -50);"
+        >
+            <polygon
+                class="tf_st3"
+                points="689.085,114.818 188.8,482 0,482 0,0 553.5,0"></polygon>
+            <g>
+                <text
+                    x="60"
+                    y="80"
+                    fill="#fff"
+                    class="title text-3xl font-semibold">Impact</text
+                >
+                <text
+                    x="60"
+                    y="120"
+                    fill="#03EAC1"
+                    class="desc text-2xl font-extralight"
+                >
+                    <tspan x="60" dy="1.3em">Every decision, </tspan>
+                    <tspan x="60" dy="1.3em">algorithm, process and </tspan>
+                    <tspan x="60" dy="1.3em">action are prioritized and </tspan>
+                    <tspan x="60" dy="1.3em">measured by its value for </tspan>
+                    <tspan x="60" dy="1.3em">our customers</tspan>
+                </text>
+            </g>
+        </g>
+
+        <g
+            class="triforce__bottom transition-all duration-200 ease-in-out"
+            data-svg-origin="188.8000030517578 114.81800079345703"
+            style="transform-origin: 0px 0px; transform: matrix(1, 0, 0, 1, 25, 25);"
+        >
+            <polygon class="tf_st2" points="188.8,482 689.085,114.818 1111,482 	"
+            ></polygon>
+
+            <text
+                x="600"
+                y="300"
+                fill="#1B1B1B"
+                class="title text-3xl font-semibold">The Hack</text
+            >
+            <text
+                x="600"
+                y="320"
+                fill="#1B1B1B"
+                class="desc text-2xl font-extralight"
+            >
+                <tspan x="460" dy="1.3em"
+                    >Offensive expertise and experience are
+                </tspan>
+                <tspan x="480" dy="1.3em"
+                    >only possible with obsessively creative,
+                </tspan>
+                <tspan x="530" dy="1.3em">comfort-defying innovation</tspan>
+            </text>
+        </g>
+    </svg>
+</div>
