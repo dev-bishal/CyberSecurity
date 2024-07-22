@@ -12,7 +12,7 @@ interface Props {
 }
 const articleURL = Astro.url;
 
-const {articleTitle, description, featuredImage, authorName, pubDate, tags} = Astro.props;
+const {articleTitle, description, featuredImage, authorName, pubDate, tags = []} = Astro.props;
 ---
 
 <MainLayout pageTitle={articleTitle} pageDescription={description}>
