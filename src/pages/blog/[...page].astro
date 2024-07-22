@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import BlogArticleCard from "../components/BlogArticleCard.astro";
 import { getCollection } from "astro:content";
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
     const blogEntries = await getCollection('blog');
@@ -13,12 +15,12 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
         );
     return paginate(blogEntries, { pageSize: 9 });
 }
-const { page } = Astro.props;
-try {
-    const allBlogPosts = page.data; 
-} catch (error) {
-    
+interface Props {
+  page: Page<CollectionEntry<'blog'>>
 }
+const { page } = Astro.props;
+const allBlogPosts = page.data ; 
+
 ---
 
 <MainLayout pageTitle="Latest Blog" pageDescription="">
