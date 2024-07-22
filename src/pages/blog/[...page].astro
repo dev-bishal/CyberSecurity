@@ -5,6 +5,7 @@ import BlogArticleCard from "../components/BlogArticleCard.astro";
 import { getCollection } from "astro:content";
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import { getFormattedDate } from "../data/utils";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
     const blogEntries = await getCollection('blog');
@@ -37,7 +38,7 @@ const allBlogPosts = page.data ;
                         articleUrl={blog.slug}
                         imageFilePath={blog.data.featuredImage.fileName} 
                         metaText={blog.data.description}
-                        pubDate={blog.data.publishDate}
+                        pubDate={getFormattedDate(blog.data.publishDate)}
                         />
                     ))
                 }

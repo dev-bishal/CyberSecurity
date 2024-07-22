@@ -1,6 +1,4 @@
 ---
-import { getFormattedDate } from '../data/utils.js';
-
 interface Props {
     imageFilePath : string,
     articleTitle : string,
@@ -22,7 +20,7 @@ const {imageFilePath, articleTitle, metaText, articleUrl, pubDate} = Astro.props
     <p class="text-sm line-clamp-4">{metaText}</p>
     <span class="w-full flex justify-between items-center text-sm">
         <a href={`/blog/${articleUrl}`} class="font-semibold hover:underline ">Read More</a>
-        <span class="date"><i class="fa-solid fa-calendar-days"></i> {getFormattedDate(pubDate)}</span>
+        <span class="date"><i class="fa-solid fa-calendar-days"></i> {pubDate}</span>
     </span>
 </div>
 
