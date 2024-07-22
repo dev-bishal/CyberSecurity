@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-import {getFormattedDate} from "../data/utils.ts";
+import {getFormattedDate} from "../data/utils.js";
 
 ---
 
