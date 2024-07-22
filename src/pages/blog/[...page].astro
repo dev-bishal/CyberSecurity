@@ -1,0 +1,44 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import BlogArticleCard from "../components/BlogArticleCard.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+    const blogEntries = await getCollection('blog');
+    blogEntries.sort(
+            (a, b) =>
+                new Date(b.data.publishDate).valueOf() -
+                new Date(a.data.publishDate).valueOf(),
+        );
+    return paginate(blogEntries, { pageSize: 9 });
+}
+const { page } = Astro.props;
+const allBlogPosts = page.data; 
+---
+
+<MainLayout pageTitle="Latest Blog" pageDescription="">
+    <PageHero heading="Blog" textContent="Read the latest news and blog articles. Know about what we are upto." imageFileName="bg(3).jpeg"></PageHero>
+    
+    <section class="blogWrapper bg-gradient-to-b grid place-items-center from-[#032309] to-[#072822]">
+        <div class="container flex flex-col gap-5 justify-center items-center text-white w-full">
+
+            <div class="main-article-container lg:px-0 px-5 py-10 flex flex-wrap lg:gap-12 gap-6 justify-start items-center w-full">
+                {
+                    allBlogPosts.map((blog: { data: { title: string; featuredImage: { fileName: string; }; description: string; publishDate: Date; }; slug: string; }) => (
+                        <BlogArticleCard 
+                        articleTitle={blog.data.title} 
+                        articleUrl={blog.slug}
+                        imageFilePath={blog.data.featuredImage.fileName} 
+                        metaText={blog.data.description}
+                        pubDate={blog.data.publishDate}
+                        />
+                    ))
+                }
+                
+            </div>
+
+        </div>
+    </section>
+
+</MainLayout>

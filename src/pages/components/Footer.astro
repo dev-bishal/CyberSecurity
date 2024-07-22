@@ -45,4 +45,21 @@ import FooterLinks from "./FooterLinks.astro";
         </div>
     </div>
 </footer>
+<a class="transition-all ease-in-out fixed cursor-pointer z-40 bottom-6 right-6 h-10 w-10 rounded-full border-2 border-green-700 bg-green-400 text-white flex justify-center items-center hover:shadow-xl hover:shadow-blue-400 translate-x-[200%]"
+                onclick="bringToView('.scrollHeader')" id="BackToTop"><i class="fas fa-chevron-up"></i></a>
 <span class="Not-needed md:pl-0 pl-4 Classes max-h-[250px] rotate-180 hidden bg-[#000a229a] backdrop-blur-sm"></span>
+
+<script is:inline>
+    //#region For Back to top 
+	window.addEventListener('scroll', function () {
+	    mybutton = document.getElementById("BackToTop");
+	    if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
+	        mybutton.classList.add("translate-x-[200%]");
+	        mybutton.classList.remove("translate-x-[200%]");
+	    } else {
+	        mybutton.classList.remove("translate-x-[200%]");
+	        mybutton.classList.add("translate-x-[200%]");
+	    }
+	})
+	//#endregion
+</script>

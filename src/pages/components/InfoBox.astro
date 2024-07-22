@@ -1,0 +1,104 @@
+---
+
+---
+
+
+<h2 class="text-3xl py-6">Challenges People Face</h2>
+<div class="infoBox relative w-full rounded-3xl bg-gradient-to-tr shadow-lg from-green-700 to-slate-900 flex lg:flex-row flex-col py-5 lg:px-0 px-3">
+    <ul class="tags lg:w-[40%] flex lg:justify-start justify-center lg:items-start items-center lg:flex-nowrap lg:flex-col flex-wrap gap-4 text-center">
+        <li class="tag lg:w-full cursor-pointer hover:shadow-lg py-3 lg:px-0 px-4 bg-gradient-to-br from-[#60d38e] to-[#44a0bd] lg:rounded-r-full lg:rounded-none rounded-full">
+            Threat Discovery
+        </li>
+        <li class="tag lg:w-full cursor-pointer hover:shadow-lg py-3 lg:px-0 px-4 bg-gradient-to-br from-[#60d38e] to-[#44a0bd] lg:rounded-r-full lg:rounded-none rounded-full">
+            Endpoint Security
+        </li>
+        <li class="tag lg:w-full cursor-pointer hover:shadow-lg py-3 lg:px-0 px-4 bg-gradient-to-br from-[#60d38e] to-[#44a0bd] lg:rounded-r-full lg:rounded-none rounded-full">
+            Vulnerability
+        </li>
+        <li class="tag lg:w-full cursor-pointer hover:shadow-lg py-3 lg:px-0 px-4 bg-gradient-to-br from-[#60d38e] to-[#44a0bd] lg:rounded-r-full lg:rounded-none rounded-full">
+            Security Training
+        </li>
+        <li class="tag lg:w-full cursor-pointer hover:shadow-lg py-3 lg:px-0 px-4 bg-gradient-to-br from-[#60d38e] to-[#44a0bd] lg:rounded-r-full lg:rounded-none rounded-full">
+            Incident Report
+        </li>
+        <li class="tag lg:w-full cursor-pointer hover:shadow-lg py-3 lg:px-0 px-4 bg-gradient-to-br from-[#60d38e] to-[#44a0bd] lg:rounded-r-full lg:rounded-none rounded-full">
+            Intro Assessment
+        </li>
+    </ul>
+
+    <div class="cardHolder lg:w-1/2 w-full lg:mt-0 mt-4 rounded-3xl lg:absolute lg:h-[110%] bg-gradient-to-br from-cyan-600 to-emerald-700 lg:right-[5%] lg:-top-[5%]">
+        <div class="card p-4">
+            <h2 class="mt-4 text-3xl">Navigating the Complex Challenges of Cybersecurity</h2>
+            <p class="mt-4">Organizations and individuals face numerous challenges in the realm of cybersecurity, primarily due to the rapidly evolving threat landscape and the increasing sophistication of cyberattacks. One of the significant challenges is the shortage of skilled cybersecurity professionals, which makes it difficult for companies to adequately protect their digital assets.</p>
+            <p class="mt-4">The dynamic nature of threats requires continuous monitoring and updating of security measures, which can be resource-intensive. Moreover, human error remains a critical vulnerability, as employees may inadvertently fall victim to phishing schemes or other social engineering tactics. </p>
+        </div>
+    </div>
+</div>
+<script is:inline>
+
+    const contentData = [
+        {
+            topic : "Threat Discovery",
+            content :[
+                "Threat discovery in cybersecurity involves identifying potential threats and vulnerabilities within an organization's network and systems. This proactive approach is essential for preventing cyberattacks before they can cause significant damage.",
+                "It includes continuous monitoring of network traffic, analyzing logs, and employing advanced threat detection tools such as intrusion detection systems (IDS) and security information and event management (SIEM) solutions. By recognizing patterns indicative of malicious activity, organizations can respond swiftly to neutralize threats and bolster their security posture."
+            ]
+        },
+        {
+            topic : "Endpoint Security",
+            content :[
+                "Endpoint security focuses on protecting devices such as computers, smartphones, and tablets that connect to an organization's network. These endpoints are often targeted by cybercriminals as entry points for attacks. Endpoint security solutions include antivirus software, firewalls, and advanced threat protection to detect and mitigate risks.",
+                "With the rise of remote work and the proliferation of connected devices, securing endpoints has become more critical than ever. Comprehensive endpoint security ensures that devices are protected from malware, unauthorized access, and data breaches, maintaining the integrity and confidentiality of sensitive information."
+            ]
+        },
+        {
+            topic : "Vulnerability",
+            content :[
+                "In cybersecurity, a vulnerability refers to a weakness in a system, application, or network that can be exploited by attackers to gain unauthorized access or cause damage. Vulnerabilities can stem from various sources, including software bugs, misconfigurations, or inadequate security practices. Identifying and addressing vulnerabilities is crucial to maintaining a secure environment.",
+                "This process involves regular vulnerability assessments and penetration testing to uncover and remediate weaknesses. Organizations often use vulnerability management tools to automate the detection and prioritization of vulnerabilities, ensuring timely patching and reducing the risk of exploitation."
+            ]
+        },
+        {
+            topic : "Security Training",
+            content :[
+                "Security training is a fundamental aspect of an organization’s cybersecurity strategy, aiming to educate employees about the importance of cybersecurity and best practices. Regular training sessions help employees recognize phishing attempts, understand the importance of strong passwords, and follow proper protocols for data handling.",
+                "Effective security training fosters a security-aware culture within the organization, where employees become the first line of defense against cyber threats. By equipping staff with the knowledge to identify and respond to potential threats, organizations can significantly reduce the risk of human error leading to security breaches."
+            ]
+        },
+        {
+            topic : "Incident Report",
+            content :[
+                "An incident report in cybersecurity is a documented record of a security breach or attack. This report details the nature of the incident, how it was detected, the scope of the damage, and the steps taken to mitigate the threat. Incident reports are crucial for understanding the impact of the attack and for improving future response strategies.",
+                "They provide insights into vulnerabilities and gaps in security that need to be addressed. Furthermore, incident reports are essential for compliance with regulatory requirements and for communicating with stakeholders about the organization's security posture and incident response capabilities."
+            ]
+        },
+        {
+            topic : "Intro Assessment",
+            content :[
+                "An intro assessment, or initial security assessment, is the first step in evaluating an organization's cybersecurity readiness. This assessment involves a comprehensive review of the current security policies, practices, and infrastructure to identify strengths and weaknesses. The goal is to understand the existing security landscape and to develop a baseline for improvement.",
+                "Intro assessments typically include risk analysis, vulnerability scanning, and compliance checks. The findings from this assessment inform the development of a robust cybersecurity strategy, helping organizations prioritize security initiatives and allocate resources effectively to mitigate risks."
+            ]
+        }
+    ]
+
+    let allTags = document.querySelectorAll("ul.tags li")
+    let contentBox = document.querySelector(".cardHolder .card")
+
+    allTags.forEach(tag => {
+        tag.addEventListener("click", ()=>{
+            for (let i = 0; i < contentData.length; i++) {
+                if(contentData[i].topic === tag.textContent.trim()){
+
+                    var paraContent = "";
+                    for (let j = 0; j < contentData[i].content.length; j++) {
+                        paraContent += `<p class="mt-4">${contentData[i].content[j]}<p>`
+                    }
+
+                    contentBox.innerHTML = 
+                    `<h2 class="mt-4 text-3xl">${tag.textContent.trim()}</h2> ${paraContent}`
+
+                }
+            }
+        })
+    });
+</script>

@@ -3,21 +3,58 @@
 ---
 
 <script is:inline>
-    document.addEventListener("scroll", ()=>{
-        const scrollY = window.scrollY;
+    function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight =
+            window.innerHeight || document.documentElement.clientHeight;
+        const windowWidth =
+            window.innerWidth || document.documentElement.clientWidth;
+
+        if (rect.top >= 0 && rect.bottom <= windowHeight) return true;
+        else if (rect.top <= 0 && rect.bottom <= windowHeight) {
+            return true;
+        }
+    }
+
+    document.addEventListener("scroll", () => {
+        /* const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
-        if (scrollY > windowHeight / 2) {
-            document.querySelector(".triforce__left").style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
-            document.querySelector(".triforce__right").style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
-            document.querySelector(".triforce__bottom").style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
+        console.log(scrollY, windowHeight / 2); */
+        if (isElementInViewport(document.querySelector(".svgHolder"))) {
+            document.querySelector(".triforce__left").style.transform =
+                "matrix(1, 0, 0, 1, 0, 0)";
+            document.querySelector(".triforce__right").style.transform =
+                "matrix(1, 0, 0, 1, 0, 0)";
+            document.querySelector(".triforce__bottom").style.transform =
+                "matrix(1, 0, 0, 1, 0, 0)";
         } else {
-            document.querySelector(".triforce__left").style.transform = 'matrix(1, 0, 0, 1, -50, -50)';
-            document.querySelector(".triforce__right").style.transform = 'matrix(1, 0, 0, 1, 50, -50)';
-            document.querySelector(".triforce__bottom").style.transform = 'matrix(1, 0, 0, 1, 25, 25)';
+            document.querySelector(".triforce__left").style.transform =
+                "matrix(1, 0, 0, 1, -50, -50)";
+            document.querySelector(".triforce__right").style.transform =
+                "matrix(1, 0, 0, 1, 50, -50)";
+            document.querySelector(".triforce__bottom").style.transform =
+                "matrix(1, 0, 0, 1, 25, 25)";
+        }
+    });
+
+    document.addEventListener("scroll", () => {
+        /* const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        console.log(scrollY, windowHeight / 2); */
+        if (isElementInViewport(document.querySelector(".svgHolderMobile"))) {
+            document.querySelector(".svgHolderMobile ul li:nth-child(1) div.contentHolder").style.transform =
+                "translate(0px, 0px)";
+            document.querySelector(".svgHolderMobile ul li:nth-child(3) div.contentHolder").style.transform =
+                "translate(0px, 0px)";
+        } else {
+            document.querySelector(".svgHolderMobile ul li:nth-child(1) div.contentHolder").style.transform =
+                "translate(0px, -70px)";
+            document.querySelector(".svgHolderMobile ul li:nth-child(3) div.contentHolder").style.transform =
+                "translate(0px, 70px)";
         }
     });
 </script>
-<div class="svgHolder px-10">
+<div class="svgHolder mt-5 p-10 hidden lg:block">
     <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,12 +62,12 @@
         x="0px"
         y="0px"
         viewBox="0 0 1111 482"
-        style="enable-background:new 0 0 1111 482;"
+        style="enable-background:new 0 0 1111 482; overflow: visible;"
         xml:space="preserve"
     >
         <style type="text/css">
             .tf_st0 {
-                fill: #3d4b85; /* #1B1B1B */
+                fill: #3d4b85; /* #3d4b85 */
             }
             .tf_st1 {
                 fill: #ffffff;
@@ -111,13 +148,13 @@
             <text
                 x="600"
                 y="300"
-                fill="#1B1B1B"
+                fill="#3d4b85"
                 class="title text-3xl font-semibold">The Hack</text
             >
             <text
                 x="600"
                 y="320"
-                fill="#1B1B1B"
+                fill="#3d4b85"
                 class="desc text-2xl font-extralight"
             >
                 <tspan x="460" dy="1.3em"
@@ -131,3 +168,81 @@
         </g>
     </svg>
 </div>
+
+<div class="svgHolderMobile my-14 p-5 lg:hidden block overflow-visible">
+    <ul class="flex flex-col overflow-x-clip overflow-visible">
+        <li class="overflow-visible">
+            <div class="contentHolder pt-6 text-center relative h-[200px] bg-[#236c5f] transition-all ease-in-out" style="transform: translate(0px, -70px);">
+                <div class="textContent relative z-[2]">
+                    <span class="text-xl font-bold">Impact</span>
+                    <p class="text-[#03EAC1]">Every decision, algorithm, process and action are prioritized and measured by its value for our customers.</p>
+                </div>
+            </div>
+        </li>
+        <li class="overflow-visible">
+            <div class="contentHolder text-center relative h-[170px] bg-[#03eac1]">
+                <div class="textContent relative z-[2]">
+                    <span class="text-xl font-bold text-[#3d4b85]">The Hack</span>
+                    <p class="text-[#3d4b85]">Offensive expertise and experience are only possible with obsessively creative, comfort-defying innovation</p>
+                </div>
+            </div>
+        </li>
+        <li class="overflow-visible">
+            <div class="contentHolder pt-6 text-center relative h-[200px] bg-[#3d4b85] transition-all ease-in-out" style="transform: translate(0px, 70px);">
+                <div class="textContent relative z-[2]">
+                    <span class="text-xl font-bold">Intuition</span>
+                    <p class="text-[#03EAC1]">Results are optimized when the technologies, tools, and communication we we use simply make sense.</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<style is:inline>
+    .svgHolderMobile ul li:nth-child(1) div.contentHolder:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200vw;
+        height: 50%;
+        transform-origin: bottom left;
+        transform: rotate(9deg);
+        background-color: #236c5f;
+    }
+
+    .svgHolderMobile ul li:nth-child(2) div.contentHolder:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200vw;
+        height: 50%;
+        transform-origin: top right;
+        transform: rotate(9deg);
+        background-color: #03eac1;
+    }
+    .svgHolderMobile ul li:nth-child(2) div.contentHolder:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 200vw;
+        height: 50%;
+        transform-origin: bottom right;
+        transform: rotate(-9deg);
+        background-color: #03eac1;
+    }
+
+    .svgHolderMobile ul li:nth-child(3) div.contentHolder:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200vw;
+        height: 50%;
+        transform-origin: top left;
+        transform: rotate(-9deg);
+        background-color: #3d4b85;
+    }
+</style>

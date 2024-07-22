@@ -1,0 +1,93 @@
+---
+
+---
+
+<style is:inline>
+    .dream-btn {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 48px;
+        position: relative;
+        display: inline-block;
+        min-width: 120px;
+        height: 48px;
+        padding: 0 20px;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 100px;
+        background-image: -webkit-linear-gradient(left, #21d397 0, #7450fe 51%, #21d397 100%);
+        background-image: -webkit-gradient(linear, left top, right top, from(#21d397), color-stop(51%, #7450fe), to(#21d397));
+        background-image: -o-linear-gradient(left, #21d397 0, #7450fe 51%, #21d397 100%);
+        background-image: linear-gradient(to right, #21d397 0, #7450fe 51%, #21d397 100%) !important;
+        background-size: 200% auto;
+        -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, .1);
+        box-shadow: 0 3px 20px rgba(0, 0, 0, .1)
+    }
+
+    .dream-btn:hover {
+        color: #fff;
+        background-position: right center
+    }
+
+</style>
+
+<div class="wrapper overflow-hidden w-full flex-col p-4 mt-10 px-8 flex justify-center text-white bg-gradient-to-br from-green-800 to-cyan-700">
+    <h1 class="text-5xl my-8 text-center">Choose your Plan</h1>
+    <div class="content-container flex flex-col lg:flex-row gap-10 lg:gap-5 w-full justify-center items-center ">
+        <div class="hover:-translate-y-4 hover:shadow-2xl transition-all ease-in-out pricing-card flex flex-col gap-3 w-full lg:w-[33%] backdrop-blur-sm border-gray-400 border rounded-xl p-6 shadow-lg">
+            <p class="PlanName text-xl">Basic</p>
+            <p class="planDesc">For Personal Use and exploration of Our Services</p>
+            <span class="price flex gap-2 items-center">
+                <i class="fa-solid fa-dollar-sign text-green-300"></i>
+                <p class="amount text-3xl">0 for one Day only</p>
+            </span>
+            <button onclick="triggerCart('Basic')" class="btn dream-btn">Get Started for Free</button>
+            <ul class="flex flex-col gap-y-4">
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+            </ul>
+        </div>
+        <div class="hover:-translate-y-4 hover:shadow-2xl transition-all ease-in-out pricing-card relative flex flex-col gap-3 w-full lg:w-[33%] bg-gradient-to-br from-[#8080806c] to-[#8080800a] backdrop-blur-sm border-gray-400 border rounded-xl p-6 shadow-lg">
+            <span class="tag flex justify-center items-center w-full left-0 absolute -top-5">
+                <span class="border rounded-full px-4 py-2 bg-blue-300">Most Popular</span>
+            </span>
+            <p class="PlanName text-xl">Premium</p>
+            <p class="planDesc">Perfect for Professionals and small businesses who wants to boost in their
+                Locality</p>
+            <span class="price flex gap-2 items-center">
+                <i class="fa-solid fa-dollar-sign text-blue-300"></i>
+                <p class="amount text-3xl">19.99 Per Month</p>
+            </span>
+            <button onclick="triggerCart('Premium')" class="btn dream-btn">Purchase</button>
+            <ul class="flex flex-col gap-y-4">
+                <li><i class="text-blue-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-blue-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-blue-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-blue-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-blue-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.)</li>
+            </ul>
+        </div>
+        <div class="hover:-translate-y-4 hover:shadow-2xl transition-all ease-in-out pricing-card flex flex-col gap-3 w-full lg:w-[33%] backdrop-blur-sm border-gray-400 border rounded-xl p-6 shadow-lg">
+            <p class="PlanName text-xl">Enterprise</p>
+            <p class="planDesc">Perfect for large businesses that requires specialised support</p>
+            <span class="price flex gap-2 items-center">
+                <i class="fa-solid fa-dollar-sign text-green-300"></i>
+                <p class="amount text-3xl">100.00 for 6 Months</p>
+            </span>
+            <button onclick="triggerCart('Enterprise')" class="btn dream-btn">Purchase</button>
+            <ul class="flex flex-col gap-y-4">
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li><i class="text-green-300 fa-solid fa-badge-check"></i> Lorem ipsum dolor sit amet.)</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -5,30 +5,44 @@
 <header class="w-full fixed top-0 z-[3] text-white"> <!-- bg-[#000A22] -->
     <div class="wrapper p-4 lg:px-20 flex justify-center items-center">
 
-        <div class="container1320 lg:w-[1320px] text-sm w-full flex justify-between items-center lg:px-14">
+        <div class="container1320 lg:w-[1320px] text-sm w-full flex justify-between items-center lg:px-10">
             <div class="left-sec my-auto">
                 <a href="/" class="logo">
                     <img src="/assets/images/logo.png" class="lg:h-14 h-10 object-contain" alt="">
                 </a>
             </div>
-            <div class="middle-sec my-auto lg:pt-0 pt-20 lg:px-0 px-4 lg:block w-2/3 lg:relative fixed z-[11] right-0 top-0 lg:h-fit h-screen lg:bg-transparent bg-[#165754a7] lg:backdrop-blur-[-1] backdrop-blur-sm lg:shadow-none shadow-md shadow-black lg:translate-x-0 translate-x-full transition-all ease-in-out">
+            <div class="middle-sec select-none my-auto lg:pt-0 pt-20 lg:px-0 px-4 lg:block w-2/3 lg:relative fixed z-[11] right-0 top-0 lg:h-fit h-screen lg:bg-transparent bg-[#165754a7] lg:backdrop-blur-[-1] backdrop-blur-sm lg:shadow-none shadow-md shadow-black lg:translate-x-0 translate-x-full transition-all ease-in-out">
                 <nav>
                     <ul class="flex gap-4 font-semibold lg:flex-row flex-col">
-                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.flipCards-holder')">Services & Products</a>
+                        <li class="cursor-pointer submenu relative rounded-full px-2 lg:hover:bg-[#80808068] border-2 border-transparent"><a>Products</a>
+                            <i class="fa-solid fa-angle-down text-xs"></i>
+                            <ul class="invisible absolute top-5 pt-1 left-0 lg:w-max w-full ">
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm rounded-t-lg lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/services">Services</a></li>
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm              lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/services/VAPT">VAPT</a></li>
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm rounded-b-lg lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/services/soc-services">SOC Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="cursor-pointer rounded-full px-2 lg:hover:bg-[#80808068] border-2 border-transparent"><a onclick="bringToView('.expertise')">Expertise</a>
                             <i class="hidden fa-solid fa-angle-down text-xs"></i>
                         </li>
-                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.expertise')">Expertise</a>
+                        <li class="cursor-pointer submenu relative rounded-full px-2 lg:hover:bg-[#80808068] border-2 border-transparent"><a>Resources</a>
+                            <i class="fa-solid fa-angle-down text-xs"></i>
+                            <ul class="invisible absolute top-5 pt-1 left-0 lg:w-max w-full">
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm rounded-t-lg lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/blog">Blog</a></li>
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm rounded-b-lg lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/events">Events</a></li>
+                            </ul>
+                        </li>
+                        <li class="cursor-pointer rounded-full px-2 lg:hover:bg-[#80808068] border-2 border-transparent"><a onclick="bringToView('.trustedBrandsSection')">Partners</a>
                             <i class="hidden fa-solid fa-angle-down text-xs"></i>
                         </li>
-                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.trustedBrandsSection')">Partners</a>
-                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
+                        <li class="cursor-pointer submenu relative rounded-full px-2 lg:hover:bg-[#80808068] border-2 border-transparent"><a>Legal</a>
+                            <i class="fa-solid fa-angle-down text-xs"></i>
+                            <ul class="invisible absolute top-5 pt-1 left-0 lg:w-max w-full">
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm rounded-t-lg  lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/about">About</a></li>
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm               lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/contact">Contact</a></li>
+                                <li class="lg:bg-[#0c520c9c] lg:backdrop-blur-sm rounded-b-lg  lg:hover:bg-[#006f8091]"><a class="lg:py-3 py-2 lg:px-3 px-2 block" href="/otherComponents">Other Components</a></li>
+                            </ul>
                         </li>
-                        <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('.solutionCardsContainer')">Security Challenge</a>
-                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
-                        </li>
-                        <!-- <li class="cursor-pointer rounded-full px-2 hover:border-blue-400 border-2 border-transparent"><a onclick="bringToView('')">Support</a>
-                            <i class="hidden fa-solid fa-angle-down text-xs"></i>
-                        </li> -->
                     </ul>
                 </nav>
             </div>
@@ -50,10 +64,30 @@
 <nav class="MenuMenu ">
 </nav>
 
+<style is:inline>
+    @media (min-width: 1024px){
+        li.submenu:hover ul{
+            visibility: visible;
+        }
+    }
+</style>
+
 <script is:inline>
+    var isSubMenuOpen = false;
     const menuBtn = document.querySelector(".menuIcon i");
     const menuBtnContainer = document.querySelector(".middle-sec");
     menuBtn.addEventListener("click", ()=>{
         menuBtnContainer.classList.toggle("translate-x-full")
     })
+
+    const screenWidth = window.innerHeight || document.documentElement.clientHeight;
+    if(screenWidth < 900){
+        const optionsWithSubMenu = menuBtnContainer.querySelectorAll("li.submenu");
+        optionsWithSubMenu.forEach(option => {
+            option.addEventListener("click", (e)=>{
+                option.children[2].classList.toggle("invisible");
+                option.children[2].classList.toggle("absolute");
+            })
+        });
+    }
 </script>

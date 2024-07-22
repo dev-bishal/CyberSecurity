@@ -1,64 +1,97 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
+import data from "../data/siteData";
+const VAPTContent = data.textContent.VAPTPage;
+import PageHero from "../components/PageHero.astro";
+import GetStarted from "../components/GetStarted.astro";
+
 ---
 
-<MainLayout pageTitle="Vulnerability Assessment and Penetration Testing" pageDescription="">
-    <section class="overflow-hidden relative">
-        <div class="slantGradient z-0 absolute 2xl:top-[-600px] xl:top-[-400px] lg:top-[-300px] md:top-[-100px] left-[-300px] bg-gradient-to-tr from-green-800 to-blue-600 h-[80vh] w-[200vw] xl:-rotate-[10deg] lg:-rotate-[15deg] -rotate-[10deg]"></div>
-        
-        <div class="content relative z-[1] lg:pt-20 pt-10 grid place-items-center w-full">
-            <div class="container">
-                <article class="py-10 px-6">
-                    <h1 class="text-white text-3xl font-semibold text-center pb-4">Vulnerability Assessment and Penetration Testing (VAPT)</h1>
-                    
-                    <figure class="my-5 lg:h-[400px] h-[250px] lg:w-full">
-                        <img class="rounded-lg shadow-lg size-full object-cover" src="/assets/images/OIG2.jpeg" alt="Vulnerability Assessment and Penetration Testing">
-                    </figure>
+<MainLayout pageTitle=`${VAPTContent.header.heading}`>
+    <PageHero 
+    heading={VAPTContent.header.heading} 
+    textContent={VAPTContent.header.textParagraph} 
+    imageFileName={VAPTContent.header.bgImageFile}></PageHero>
 
-                    <p>Welcome to Cybersecurity Finland's comprehensive Vulnerability Assessment and Penetration
-                        Testing (VAPT) service. Our expert team is dedicated to assessing and fortifying your
-                        organization's cybersecurity posture through meticulous evaluations and simulated attacks.
-                        </p>
+    <section class="Services bg-gradient-to-br from-[#032309] to-[#102049]">
+        <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center" style="background-image: url('/assets/images/wave-3.png');">
+            <div class="container1320 size-full lg:w-[1100px] lg:pt-10 py-5 lg:px-0 px-5">
+                <div class="content-holder w-full text-white">
                     
-                    <h2 class="text-xl font-semibold mt-5 mb-3">What We Offer</h2>
-                    <p>Our VAPT service begins with a detailed assessment phase where we thoroughly examine your
-                        network, applications, and systems to identify potential vulnerabilities. Using a combination of
-                        automated tools and manual testing methodologies, we uncover weaknesses that malicious
-                        actors could exploit.</p>
-                    <p>Next, we conduct penetration testing, simulating real-world cyber attacks to assess the
-                        effectiveness of your security controls. This involves attempting to exploit identified
-                        vulnerabilities in a controlled environment to determine the extent of potential risks.</p>
+                    <!-- What We Offer -->
+                    <div class="showcase w-full flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
+                        <div class="part lg:w-[64%]">
+                            <h2 class="text-3xl font-bold">{VAPTContent.content[0].paraHeading}</h2>
+                            <p class="mt-4">{VAPTContent.content[0].para1}</p>
+                            <p class="mt-4">{VAPTContent.content[0].para2}</p>
+                        </div>
+                        <div class="part lg:w-[34%] flex justify-center items-center">
+                            <div class="card lg:w-full w-[350px] shadow-xl shadow-blue-900 flex flex-col bg-gradient-to-br from-green-500 to-blue-900">
+                                <span class="block bg-gradient-to-tr from-purple-700 to-blue-500 h-1"></span>
+                                <div class="card-content p-5">
+                                    <img src="/assets/images/logo.png" alt="CyberSecurity Finland Logo" class="h-10 w-fit">
 
-                    <h2 class="text-xl font-semibold mt-5 mb-3">Deliverables</h2>
-                    <p>Following our assessments and penetration testing, we provide comprehensive reports detailing
-                        our findings, including prioritized recommendations for remediation. These reports are designed
-                        to be actionable, providing clear guidance on how to strengthen your defenses and mitigate
-                        identified risks effectively.</p>
-                    
-                    <h2 class="text-xl font-semibold mt-5 mb-3">Why Choose Us</h2>
-                    <p>At Cybersecurity Finland, we prioritize accuracy, thoroughness, and actionable insights in our
-                        VAPT services. Our team consists of seasoned cybersecurity professionals with extensive
-                        experience across various industries. We leverage industry-leading tools and methodologies to
-                        ensure that your organization receives the most accurate and up-to-date assessment of its
-                        cybersecurity posture.</p>
-                    <p>Partnering with us means gaining a deeper understanding of your security vulnerabilities and
-                        receiving tailored recommendations to enhance your defenses against evolving threats. We
-                        work closely with your team to ensure that our findings and recommendations align with your
-                        business objectives and operational requirements.</p>
-                    
-                    <h2 class="text-xl font-semibold mt-5 mb-3">Take Action Today</h2>
-                    <p>Investing in our VAPT service is an investment in the security and resilience of your
-                        organization. By proactively identifying and mitigating potential security weaknesses, you can
-                        minimize the risk of data breaches, financial losses, and damage to your reputation.</p>
-                    
-                    <h2 class="text-xl font-semibold mt-5 mb-3">Contact Us</h2>
-                    <p>Ready to take the next step in securing your organization? Contact Cybersecurity Finland today
-                        to learn more about our VAPT service and how we can help safeguard your business against
-                        cyber threats</p>
-                </article>
+                                    <div class="flex justify-end">
+                                        <p class="w-2/3 relative">
+                                            <i class="fa-sharp fa-solid fa-comma text-blue-600 text-4xl absolute -top-5 -left-5"></i>
+                                            {VAPTContent.OtherContent.para1}</p>
+                                    </div>
+
+                                    <span class="px-12 py-11 flex justify-center items-center h-56 w-full mt-5 bg-cover bg-[url('/assets/images/imageBorder.png')]">
+                                        <img src="/assets/images/service.jpeg" alt="service image" class="size-full object-cover">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deliverables -->
+                    <div class="showcase w-full flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
+                        <div class="content">
+                            <h2 class="text-3xl font-semibold mt-5 mb-3">{VAPTContent.content[1].paraHeading}</h2>
+                            <p class="mt-4">{VAPTContent.content[1].para1}</p>
+                        </div>
+                    </div>
+
+                    <!-- Take Action Today -->
+                    <div class="showcase w-full flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
+                        <div class="content">
+                            <h2 class="text-3xl font-semibold mt-5 mb-3">{VAPTContent.content[3].paraHeading}</h2>
+                            <p class="mt-4">{VAPTContent.content[3].para1}</p>
+                        </div>
+                    </div>
+
+                    <!-- Why Choose Us -->
+                    <div class="showcase my-10 w-full flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
+                        <img src="/assets/images/OIG3.jpeg" alt="" class="lg:w-1/2 rounded-md shadow-lg shadow-cyan-600 h-[350px] object-cover ">
+                        <div class="content lg:w-1/2">
+                            <h2 class="text-3xl font-semibold mt-5 mb-3">{VAPTContent.content[2].paraHeading}</h2>
+                            <p class="mt-4">{VAPTContent.content[2].para1}</p>
+                            <p class="mt-4">{VAPTContent.content[2].para2}</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div class="showcase w-full flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
+                        <div class="content">
+                            <h2 class="text-3xl font-semibold mt-5 mb-3">{VAPTContent.content[4].paraHeading}</h2>
+                            <p class="mt-4">{VAPTContent.content[4].para1}</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
+        <div class="contentWrapper text-white">
+            <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+                <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent to-[#072822] z-0"></div>
+
+                <GetStarted></GetStarted>
+            </div>
+        </div>
+
     </section>
 
 </MainLayout>

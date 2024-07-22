@@ -11,12 +11,15 @@ const flipCards = data.textContent.HomePage.top.flipCards;
     <div class="wrapper relative w-full flex justify-center items-center z-[2] ">
         <div class="container1320 lg:w-[1320px] pt-20" data-aos="fade-up" data-aos-delay="500">
             <span class="w-full flex flex-col justify-center items-center lg:px-0 px-3">
+                {
+                data.textContent.HomePage.top.topLink.isDisplay &&
                 <a class="rounded-full px-8 py-2 font-bold bg-[#2c6857] text-sm lg:text-base text-center shadow-slate-700 shadow-lg" 
-                href={
+                    href={
                     data.textContent.HomePage.top.topLink.link != null 
                      && data.textContent.HomePage.top.topLink.link || null
                     }
                     >{data.textContent.HomePage.top.topLink.title} <i class="hidden fa-solid fa-angle-right text-xs"></i></a> <!-- bg-blue-950 -->
+                }
 
                 <h1 class="lg:text-5xl text-4xl font-bold text-center mt-28 lg:px-52 lg:leading-[70px] leading-10">{data.textContent.HomePage.top.MainHeading}</h1>
 

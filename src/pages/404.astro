@@ -1,0 +1,21 @@
+---
+import MainLayout from "./layouts/MainLayout.astro";
+---
+
+<MainLayout pageTitle="Services at CyberSecurity Finland">
+    <div class="404PageContent flex flex-col justify-center items-center bg-gradient-to-br from-[#032309] to-[#102049]">
+        <div class="container flex flex-col gap-5 justify-center items-center text-white h-[80vh] w-full">
+            <img src="/assets/images/404.png" alt="404 Image" class="size-56">
+            <h2 class="text-6xl font-bold">404!</h2>
+            <p class="uppercase">The Page you requested could not be found or is removed.</p>
+            <a href="/" class="rounded-full w-fit border-2 border-[#03eac1] bg-[#108a74] hover:scale-105 transition-all ease-in-out hover:shadow-xl hover:shadow-cyan-500 items-center flex gap-3 mt-5 px-8 py-2 font-bold shadow-lg">Home</a>
+
+        </div>
+
+        <div class="contentWrapper text-white h-[10vh] w-full">
+            <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+                <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent to-[#072822] z-0"></div>
+            </div>
+        </div>
+    </div>
+</MainLayout>

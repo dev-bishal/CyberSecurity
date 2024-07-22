@@ -1,2 +1,24 @@
 ---
+import Counter from "./components/Counter.astro";
+import FilterComponent from "./components/FilterComponent.astro";
+import PricingCards from "./components/PricingCards.astro";
+import Testimonials from "./components/Testimonials.astro";
+import MainLayout from "./layouts/MainLayout.astro";
 ---
+<MainLayout>
+
+    <div class="wrapper grid place-items-center">
+        <h1 class="text-4xl font-bold underline">Other Components to use</h1>
+        <div class="container">
+            <h2 class="text-2xl font-semibold underline pt-16">Filterable Cards : </h2>
+            <FilterComponent />
+            <h2 class="text-2xl font-semibold underline pt-16">Pricing Cards : </h2>
+            <PricingCards />
+            <h2 class="text-2xl font-semibold underline pt-16">Counter : </h2>
+            <Counter />
+            <h2 class="text-2xl font-semibold underline pt-16">Testimonials : </h2>
+            <Testimonials />
+
+        </div>
+    </div>
+</MainLayout>

@@ -1,0 +1,28 @@
+---
+interface Props {
+    awardSectionData : {
+        title : string,
+        subText : string,
+        awardCards : any[]
+    }
+}
+
+const {awardSectionData} = Astro.props;
+---
+<div class="awards-recognition w-full flex flex-col gap-3 text-center my-5">
+    <h2 class="text-3xl font-bold">{awardSectionData.title}</h2>
+    <p>{awardSectionData.subText}</p>
+
+    <div class="awards-holder flex gap-3 w-full flex-wrap justify-center items-center mt-4">
+        {
+            awardSectionData.awardCards.map((awardCard)=>(
+                <div class="awards flex flex-col justify-between w-[45%] md:w-[220px] md:h-[300px] h-fit py-5 px-3 cursor-pointer hover:bg-gradient-to-tr bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
+                    <p class="text-center">
+                        <a href={awardCard.redirectPath}>{awardCard.awardTitle}</a>
+                    </p>
+                    <img src={awardCard.imageFile} alt="award image" class="w-full h-40 py-3 object-contain" />
+                </div>
+            ))
+        }
+    </div>
+</div>

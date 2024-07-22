@@ -14,3 +14,8 @@ window.addEventListener('scroll', function () {
         this.document.querySelector("header").classList.remove("backdrop-blur-sm");
     }        
 })
+
+function bringToView(sectionElement){
+       element = document.querySelector(sectionElement);
+       element.scrollIntoView();
+}

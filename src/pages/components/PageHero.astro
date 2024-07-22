@@ -8,8 +8,8 @@ interface Props {
 const {heading, textContent, imageFileName} = Astro.props;
 
 ---
-
-<section class="lg:h-[60vh] h-[40vh] relative text-white bg-center bg-no-repeat bg-cover" style=`background-image: url('/assets/images/${imageFileName}')`>
+<!-- h-[40vh] -->
+<section class="lg:h-[60vh] lg:pb-0 pb-5 relative text-white bg-center bg-no-repeat bg-cover" style=`background-image: url('/assets/images/${imageFileName}')`> 
     <div class="overlay absolute size-full bg-[#0000008a]"></div>
 
     <div class="wrapper size-full relative w-full flex justify-center items-center z-[2] ">

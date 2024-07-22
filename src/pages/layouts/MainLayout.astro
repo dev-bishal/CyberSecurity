@@ -18,21 +18,21 @@ const {pageTitle, pageDescription} = Astro.props;
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-    <Head pageTitle={pageTitle}/>
+    <Head pageTitle={pageTitle} pageDescription={pageDescription}/>
 
     <body class="font-lexend">
         <Navbar></Navbar>
         <div class="content-placeholder flex justify-center items-center">
             <main class="w-full">
+	            <span class="scrollHeader"></span>
                 <slot></slot>
             </main>
         </div>
         <Footer></Footer>
-    
+        
         <script src="/assets/scripts/main.js" is:inline></script>
     </body>
 </html>
-
 
 <!-- <div class="wrapper w-full flex justify-center items-center">
     <div class="container1320 lg:w-[1320px]"></div>

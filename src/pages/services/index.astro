@@ -1,0 +1,213 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import data from "../data/siteData";
+import FilterComponent from "../components/FilterComponent.astro";
+import GetStarted from "../components/GetStarted.astro";
+import InfoBox from "../components/InfoBox.astro";
+const serviceContentData = data.textContent.Services1;
+
+
+---
+
+<style>
+    .floatEle{
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    .dream-dots {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 30px
+    }   
+
+    .dream-dots span {
+        width: 8px;
+        height: 8px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background-color: #fff
+    }   
+
+    .dream-dots span:first-child {
+        background-color: #7450fe
+    }   
+
+    .dream-dots span:nth-child(2) {
+        background-color: #7450fe
+    }   
+
+    .dream-dots span:nth-child(3) {
+        background-color: #007bff
+    }   
+
+    .dream-dots span:nth-child(4) {
+        background-color: #007bff
+    }   
+
+    .dream-dots span:nth-child(5) {
+        background-color: #21d397
+    }   
+
+    .dream-dots span:nth-child(6) {
+        background-color: #21d397
+    }   
+
+</style>
+
+<MainLayout pageTitle="Services at CyberSecurity Finland" pageDescription="">
+    <PageHero heading={serviceContentData.header.heading} textContent={serviceContentData.header.textParagraph} imageFileName="bg(1).jpeg"></PageHero>
+    <section class="Services bg-gradient-to-br from-[#032309] to-[#102049]">
+        <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+            <span class="absolute bottom-0 w-full z-0">
+                <img src="/assets/images/test.png" alt="gradient" class="w-full">
+            </span>
+            <div class="container1320 size-full lg:w-[1140px] lg:pt-10 py-5 lg:px-0 px-5">
+                <div class="content-holder w-full text-white relative">
+                    <img src="/assets/images/servicesbgElement.png" alt="floating element" class="floatEle absolute top-0 left-0 z-0">
+
+                    <div class="content-showcase pb-14 flex lg:flex-row items-center flex-col gap-3 relative z-[1]">
+                        <div class="part lg:w-1/2">
+                            <h2 class="text-5xl font-bold">Security Solutions</h2>
+                            <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ratione sequi id ducimus alias ullam iure consequatur maiores excepturi. Eius id distinctio quae consequuntur necessitatibus vitae sunt quo exercitationem delectus.</p>
+                            <p class="pt-4">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ratione sequi id ducimus alias ullam iure consequatur maiores excepturi. Eius id distinctio quae consequuntur necessitatibus vitae sunt quo exercitationem delectus.</p>
+                        </div>
+                        <div class="part lg:w-1/2">
+                            <img src="/assets/images/servicesSVG.png" alt="Services Giffy Image" class="w-[90%] animate-pulse">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="servicesCards-holder relative z-[1] flex lg:flex-row flex-col justify-between items-center gap-6 text-white">
+                    <div class="servicesCards flex gap-4 p-3 rounded-md lg:w-[31%] lg:min-h-[230px] border border-white backdrop-blur-sm bg-[#0d620d75]">
+                        <img src="/assets/images/VAPT.jpg" alt="Service" class="size-28 object-cover rounded-lg ">
+                        <span class="block relative">
+                            <h2 class="mb-4">Vulnerability Assessment & Penetration Testing</h2>
+                            <p class="text-sm">Our VAPT service starts with a thorough assessment of your network, applications, and systems to identify potential vulnerabilities.</p>
+                            <a class="text-sm lg:absolute bottom-0 text-green-600 hover:underline" href="/services/VAPT">Read More <i class="fa-solid fa-circle-arrow-right"></i></a>
+                        </span>
+                    </div>
+                    <div class="servicesCards flex gap-4 p-3 rounded-md lg:w-[31%] lg:min-h-[230px] border border-white backdrop-blur-sm bg-[#0d620d75]">
+                        <img src="/assets/images/compliance-Testing.jpg" alt="Service" class="size-28 object-cover rounded-lg ">
+                        <span class="block relative">
+                            <h2 class="mb-4">Compliance</h2>
+                            <p class="text-sm">We provide ongoing support and guidance to help you implement solutions effectively, ensuring your systems stay secure and resilient against future threats.</p>
+                        </span>
+                    </div>
+                    <div class="servicesCards flex gap-4 p-3 rounded-md lg:w-[31%] lg:min-h-[230px] border border-white backdrop-blur-sm bg-[#0d620d75]">
+                        <img src="/assets/images/SOC.jpg" alt="Service" class="size-28 object-cover rounded-lg ">
+                        <span class="block relative">
+                            <h2 class="mb-4">SOC Services</h2>
+                            <p class="text-sm">Our SOC services use advanced threat detection technologies and expert analysis to continuously monitor your network for suspicious activities and potential breaches.</p>
+                            <a class="text-sm lg:absolute bottom-0 text-green-600 hover:underline" href="/services/soc-services">Read More <i class="fa-solid fa-circle-arrow-right"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contentWrapper bg-gradient-to-r from-[#06642c] to-[#02435c] text-white">
+            <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+                <div class="container1320 size-full lg:w-[1140px] lg:pt-10 py-5 lg:px-0 px-5">
+
+                    <InfoBox>
+
+                    <div class="content-container flex flex-col lg:flex-row w-full pt-16 text-white">
+                        <div class="part lg:w-1/2 flex flex-col gap-y-3">
+                            <img src="/assets/images/servicesSolutions.png" alt="about image">
+                        </div>
+                        <div class="part lg:w-1/2 flex flex-col gap-y-5">
+                            <div class="dream-dots">
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+        
+                            <h2 class="text-[30px]">Promote Your Business</h2>
+                            <div class="tags-holder flex gap-3">
+                                <div class="integration-link px-[4xp] py-[10px] bg-gradient-to-b from-green-500 to-green-900 rounded-full"
+                                    style="padding: 4px 10px;">
+                                    <span>High-quality traffic</span>
+                                </div>
+                                <div class="integration-link px-[4xp] py-[10px] bg-gradient-to-b from-green-500 to-green-900 rounded-full"
+                                    style="padding: 4px 10px;">
+                                    <span>Large volume</span>
+                                </div>
+                                <div class="integration-link px-[4xp] py-[10px] bg-gradient-to-b from-green-500 to-green-900 rounded-full"
+                                    style="padding: 4px 10px;">
+                                    <span>Low prices</span>
+                                </div>
+                            </div>
+        
+                            <p class="text-[16px] leading-7">Discover the power of local SEO and unlock new opportunities for
+                                your business. Our dedicated team combines expertise with innovation to ensure your brand stands
+                                out in the competitive local market. Ready to elevate your online presence? Let's get started!
+                            </p>
+
+                            <ul class="Offers">
+                                <li class="mt-3"><i class="fa-solid fa-circle-check text-lg mr-3"></i> Lorem ipsum dolor sit amet consectetur, adipisicing Lorem ipsum dolor sit amet</li>
+                                <li class="mt-3"><i class="fa-solid fa-circle-check text-lg mr-3"></i> Lorem ipsum dolor sit amet consectetur, adipisicing</li>
+                                <li class="mt-3"><i class="fa-solid fa-circle-check text-lg mr-3"></i> Lorem ipsum dolor sit amet consectetur, adipisicing dolor sit amet consectetur, adipisicing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="letsTalk relative flex justify-center items-center flex-col w-full text-white bg-gradient-to-r from-[#06642c] to-[#02435c]">
+            
+            <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent to-[#072822] z-0"></div>
+
+            <div class="container overflow-visible relative z-[1] lg:px-0 px-4">
+                <div class="2col-header flex lg:flex-row flex-col justify-between items-center gap-20">
+                    <span class="block lg:w-1/2">
+                        <p class="capitalize">Creative Approach</p>
+                        <h2 class="text-5xl font-bold leading-[4rem] capitalize">AI-Powered Results</h2>
+                    </span>
+
+                    <span class="block lg:w-1/2 text-sm">
+                        <p >AI-Powered Results offer a creative edge, seamlessly blending data-driven insights with human ingenuity to craft compelling content that captivates audiences. Embrace innovation and elevate your digital presence with our visionary approach to content creation.</p>
+                    </span>
+                </div>
+
+                <div class="features-container overflow-visible my-8 flex lg:flex-row flex-col justify-center gap-5">
+                    <div class="cursor-default featureBox lg:w-1/4 hover:scale-105 p-4 rounded-3xl border-2 border-slate-200 flex flex-col gap-4 hover:bg-gradient-to-br from-green-400 to-blue-600 shadow-xl transition-all ease-in-out delay-150">
+                        <img src="/assets/images/featureIcon1.png" alt="feature Icon" class="rounded-full h-10 w-10">
+                        <p class="font-bold">Intelligent</p>
+                        <p class="text-sm">Our AI-powered system employs advanced algorithms to intelligently analyze data, generating insightful and impactful content tailored to your needs.</p>
+                    </div>
+                    <div class="cursor-default featureBox lg:w-1/4 hover:scale-105 p-4 rounded-3xl border-2 border-slate-200 flex flex-col gap-4 hover:bg-gradient-to-br from-green-400 to-blue-600 shadow-xl transition-all ease-in-out delay-150">
+                        <img src="/assets/images/featureIcon2.png" alt="feature Icon" class="rounded-full h-10 w-10">
+                        <p class="font-bold">Visionary</p>
+                        <p class="text-sm">Embrace the future of content creation with our visionary approach, leveraging cutting-edge technology to anticipate trends and deliver innovative solutions.</p>
+                    </div>
+                    <div class="cursor-default featureBox lg:w-1/4 hover:scale-105 p-4 rounded-3xl border-2 border-slate-200 flex flex-col gap-4 hover:bg-gradient-to-br from-green-400 to-blue-600 shadow-xl transition-all ease-in-out delay-150">
+                        <img src="/assets/images/featureIcon3.png" alt="feature Icon" class="rounded-full h-10 w-10">
+                        <p class="font-bold">Creative</p>
+                        <p class="text-sm">Fuel your creativity effortlessly with our AI-driven platform, which provides endless inspiration and expert assistance in crafting engaging narratives that captivate audiences.</p>
+                    </div>
+                    <div class="cursor-default featureBox lg:w-1/4 hover:scale-105 p-4 rounded-3xl border-2 border-slate-200 flex flex-col gap-4 hover:bg-gradient-to-br from-green-400 to-blue-600 shadow-xl transition-all ease-in-out delay-150">
+                        <img src="/assets/images/featureIcon4.png" alt="feature Icon" class="rounded-full h-10 w-10">
+                        <p class="font-bold">Adjustable</p>
+                        <p class="text-sm">With customizable settings and flexible options, our platform adapts to your preferences, ensuring that you maintain control while harnessing the full potential of AI-powered results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <GetStarted />
+        </div>
+    </section>
+    
+</MainLayout>

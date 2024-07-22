@@ -1,0 +1,78 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Prose from "../components/Prose.astro";
+
+interface Props {
+    articleTitle : string,
+    description : any,
+    featuredImage : string,
+    authorName : string,
+    pubDate : string,
+    tags : string[]
+}
+const articleURL = Astro.url;
+
+const {articleTitle, description, featuredImage, authorName, pubDate, tags} = Astro.props;
+---
+
+<MainLayout pageTitle={articleTitle} pageDescription={description}>
+    <section class="overflow-hidden relative">
+        <div class="slantGradient z-0 absolute 2xl:top-[-600px] xl:top-[-400px] lg:top-[-300px] top-[-210px] left-[-300px] bg-gradient-to-tr from-green-800 to-blue-600 h-[80vh] w-[200vw] xl:-rotate-[10deg] -rotate-[15deg]"></div>
+        
+        <div class="content relative z-[1] lg:pt-20 pt-10 grid place-items-center w-full">
+            <div class="container">
+                <article class="py-10 px-6">
+                    <h1 class="text-white text-3xl font-semibold text-center pb-4">{articleTitle}</h1>
+
+                    <figure class="my-5 lg:h-[400px] h-[250px] lg:w-full">
+                        <img class="rounded-lg shadow-lg size-full object-cover" src={`/assets/images/${featuredImage}`} alt={articleTitle}>
+                    </figure>
+                    <Prose>
+                        <slot />
+                    </Prose>
+                </article>
+                <div class="otherData w-full bg-gradient-to-br from-green-800 to-cyan-800 text-white shadow-lg rounded-md shadow-cyan-700 px-4 py-7 mb-6 flex text-sm">
+                    <div class="container flex justify-between px-6">
+                        <div class="part w-[40%] flex flex-col items-start">
+
+                            <span class="author flex my-3">Author : {authorName}</span>
+
+                            <span class="flex my-3 gap-3">
+                                <span>Tags: </span>
+                                <ul class="tags flex gap-x-5 gap-y-2 flex-wrap">
+                                    {
+                                        tags.map((tag)=>(
+                                            <li class="hover:text-blue-300 cursor-pointer">#{tag}</li>
+                                        ))
+                                    }
+                                </ul>
+                            </span>
+                            
+                        </div>
+                        <div class="part w-[40%] flex items-end flex-col">
+                            <span id="pubDate" class="block pubDate my-3">Published Date: {pubDate}</span>
+                                
+                                <span class="flex gap-3 my-3 items-center">
+                                    <span>Share:</span>
+                                    <ul class="tags flex gap-x-3">
+                                        <li class="hover:text-blue-300 cursor-pointer text-3xl ">
+                                            <a target="_blank" href=`mailto:?subject=New%20Article&body=Read%20this%20new%20article%20${articleURL.href}`><i class="fa-solid fa-square-share-nodes"></i></a>
+                                        </li>
+                                        
+                                        <li class="hover:text-blue-300 cursor-pointer text-3xl ">
+                                            <a target="_blank" href=`https://www.linkedin.com/shareArticle?mini=true&url=${articleURL.href}&title=${articleTitle}&summary=${description}&source=Example`><i class="fa-brands fa-linkedin"></i></a>
+                                        </li>
+                                        
+                                        <li class="hover:text-blue-300 cursor-pointer text-3xl ">
+                                            <a target="_blank" href=`https://wa.me/?text=Read%20this%20new%20article%20${articleURL.href}`><i class="fa-brands fa-square-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</MainLayout>

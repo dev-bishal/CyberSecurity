@@ -1,0 +1,120 @@
+---
+import AwardsCards from "./components/AwardsCards.astro";
+import GetStarted from "./components/GetStarted.astro";
+import PageHero from "./components/PageHero.astro";
+import Testimonials from "./components/Testimonials.astro";
+import data from "./data/siteData";
+import MainLayout from "./layouts/MainLayout.astro";
+const aboutContentData = data.textContent.about;
+const awardSectionData = aboutContentData.awardsSection;
+---
+<MainLayout pageTitle="Services at CyberSecurity Finland">
+
+    <PageHero heading={aboutContentData.header.heading} textContent={aboutContentData.header.textParagraph} imageFileName="bg(1).jpeg"></PageHero>
+    <section class="Services bg-gradient-to-br from-[#032309] to-[#102049]">
+        <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center" style="background-image: url('/assets/images/wave-3.png');">
+            <div class="container1320 size-full lg:w-[1200px] lg:pt-10 py-5 lg:px-0 px-5">
+                <div class="content-holder w-full text-white">
+
+                    <!-- Our Mission -->
+                    <div class="showcase px-5 mb-5 flex flex-col gap-5 items-center justify-center">
+                        <img src="/assets/images/logo.png" alt="CyberSecurity Finland Logo" class="h-20 w-fit">
+                        <h2 class="text-3xl font-bold">{aboutContentData.content[0].heading}</h2>
+                        <p class="mt-4">{aboutContentData.content[0].para1}</p>
+                        <p class="mt-2">{aboutContentData.content[0].para2}</p>
+                    </div>
+
+                    <div class="showcase flex py-5 items-center justify-center">
+                        <div class="workingServices w-fit bg-gradient-to-br from-green-800 to-cyan-800 text-white shadow-lg rounded-md shadow-cyan-700 px-4 py-7 flex text-sm">
+                            <div class="cards w-[25%] text-center flex flex-col justify-center items-center gap-4 uppercase">
+                                <div class="iconHolder relative flex justify-center items-center">
+                                    <span class="absolute rounded-full size-16 bg-[#0890b29c] z-0" style="box-shadow: 0 0 10px 12px #0890b29c;"></span>
+                                    <img src="/assets/images/ciso-icn.svg" alt="service icon" class="relative z-[1] size-14">
+                                </div>
+                                <span class="font-semibold">Threat Intelligence Services</span>
+                            </div>
+                            <div class="cards w-[25%] text-center flex flex-col justify-center items-center gap-4 uppercase">
+                                <div class="iconHolder relative flex justify-center items-center">
+                                    <span class="absolute rounded-full size-16 bg-[#0890b29c] z-0" style="box-shadow: 0 0 10px 12px #0890b29c;"></span>
+                                    <img src="/assets/images/soc-manager-icn.svg" alt="service icon" class="relative z-[1] size-14">
+                                </div>
+                                <span class="font-semibold">Penetration Testing</span>
+                            </div>
+                            <div class="cards w-[25%] text-center flex flex-col justify-center items-center gap-4 uppercase">
+                                <div class="iconHolder relative flex justify-center items-center">
+                                    <span class="absolute rounded-full size-16 bg-[#0890b29c] z-0" style="box-shadow: 0 0 10px 12px #0890b29c;"></span>
+                                    <img src="/assets/images/cloud-secops-icn.svg" alt="service icon" class="relative z-[1] size-14">
+                                </div>
+                                <span class="font-semibold">Security Awareness Training</span>
+                            </div>
+                            <div class="cards w-[25%] text-center flex flex-col justify-center items-center gap-4 uppercase">
+                                <div class="iconHolder relative flex justify-center items-center">
+                                    <span class="absolute rounded-full size-16 bg-[#0890b29c] z-0" style="box-shadow: 0 0 10px 12px #0890b29c;"></span>
+                                    <img src="/assets/images/infrastructure-manager-icn.svg" alt="service icon" class="relative z-[1] size-14">
+                                </div>
+                                <span class="font-semibold">Incident Response Planning and Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- In the business since -->
+                    <div class="showcase w-full my-10 flex lg:flex-row flex-col-reverse gap-5 items-center justify-center">
+                        <div class="part lg:w-[64%]">
+                            <h2 class="text-3xl font-bold">{aboutContentData.content[1].heading}</h2>
+                            <p class="mt-4">{aboutContentData.content[1].para1}</p>
+                            <p class="mt-4">{aboutContentData.content[1].para2}</p>
+                        </div>
+                        <div class="part lg:w-[34%] flex justify-center items-center">
+                            <div class="card lg:w-full w-[350px] shadow-xl shadow-blue-900 flex flex-col bg-gradient-to-br from-green-500 to-blue-900">
+                                <span class="block bg-gradient-to-tr from-purple-700 to-blue-500 h-1"></span>
+                                <div class="card-content p-5">
+                                    <img src="/assets/images/logo.png" alt="CyberSecurity Finland Logo" class="h-10 w-fit">
+
+                                    <div class="flex justify-end">
+                                        <p class="w-2/3 relative">
+                                            <i class="fa-sharp fa-solid fa-comma text-blue-600 text-4xl absolute -top-5 -left-5"></i>
+                                            {aboutContentData.content[1].moto}</p>
+                                    </div>
+
+                                    <span class="px-12 py-11 flex justify-center items-center h-56 w-full mt-5 bg-cover bg-[url('/assets/images/imageBorder.png')]">
+                                        <img src="/assets/images/service.jpeg" alt="service image" class="size-full object-cover">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper relative size-full text-white flex flex-col justify-center items-center overflow-hidden bg-cover bg-center">
+            <AwardsCards {awardSectionData}/>
+
+            <div class="contentWrapper text-white w-full mt-4 ">
+                <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+                    <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent to-[#072822] z-0"></div>                   
+
+                    <div class="CEO_Message_Wrapper lg:w-3/4 flex justify-center items-center flex-col rounded-lg shadow-md bg-[url('/assets/images/wave-shap.png')] bg-cover bg-[#14579085] shadow-[#1d66f6] lg:py-5 p-10 lg:m-0 mx-4">
+                        <div class="CEO_Message relative w-full flex lg:flex-row flex-col justify-center items-center gap-5 ">
+                            <span class="lg:w-[30%] text-4xl">Message from CEO</span>
+                            <span class="text-center grid place-items-center">
+                                <img src="https://media.licdn.com/dms/image/C4E03AQGTpf9taVdtuQ/profile-displayphoto-shrink_800_800/0/1580723864651?e=1727308800&v=beta&t=tWCirJx4rXQeEQCGsNwWwzfOqPKuIawi1CjR8Ivbf38" alt="CEO Cybersecurity Finland" class="size-36 border-2 border-green-500 shadow-lg shadow-green-200 rounded-full">
+                                <span>Mr. Ben Ottoman</span>
+                                <span>CEO CyberSecurity Finland</span>
+                            </span>
+                            <span class="lg:w-[30%] relative">
+                                <i class="absolute z-0 -top-6 text-3xl text-green-400 fa-duotone fa-solid fa-quote-left"></i>
+                                <i class="absolute z-0 -bottom-6 right-4 text-3xl text-green-400 rotate-180 fa-duotone fa-solid fa-quote-left"></i>
+                                <p class="text-sm relative z-[1]">Welcome to Cybersecurity Finland. As the CEO, I am proud to lead a team of dedicated professionals committed to safeguarding your digital world. Our mission is to provide top-notch cybersecurity solutions that protect your valuable assets and ensure your peace of mind.</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</MainLayout>
+
