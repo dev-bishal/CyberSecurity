@@ -1,12 +1,9 @@
 ---
 import AwardsCards from "./components/AwardsCards.astro";
-import GetStarted from "./components/GetStarted.astro";
 import PageHero from "./components/PageHero.astro";
-import Testimonials from "./components/Testimonials.astro";
-import data from "./data/siteData";
 import MainLayout from "./layouts/MainLayout.astro";
+import data from "./data/siteData";
 const aboutContentData = data.textContent.about;
-const awardSectionData = aboutContentData.awardsSection;
 ---
 <MainLayout pageTitle="Services at CyberSecurity Finland">
 
@@ -89,7 +86,7 @@ const awardSectionData = aboutContentData.awardsSection;
         </div>
 
         <div class="wrapper relative size-full text-white flex flex-col justify-center items-center overflow-hidden bg-cover bg-center">
-            <AwardsCards {awardSectionData}/>
+            <AwardsCards/>
 
             <div class="contentWrapper text-white w-full mt-4 ">
                 <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">

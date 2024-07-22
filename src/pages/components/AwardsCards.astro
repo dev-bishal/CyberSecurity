@@ -1,13 +1,7 @@
 ---
-interface Props {
-    awardSectionData : {
-        title : string,
-        subText : string,
-        awardCards : any[]
-    }
-}
-
-const {awardSectionData} = Astro.props;
+import data from "../data/siteData";
+const aboutContentData = data.textContent.about;
+const awardSectionData = aboutContentData.awardsSection;
 ---
 <div class="awards-recognition w-full flex flex-col gap-3 text-center my-5">
     <h2 class="text-3xl font-bold">{awardSectionData.title}</h2>
