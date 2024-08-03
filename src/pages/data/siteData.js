@@ -1,6 +1,3 @@
-import Footer from "../components/Footer.astro";
-import Partners from "../partners.astro";
-
 var data = {
     "SiteNameAfter_PageTitle" : true,
     "siteTitle": "CyberSecurity Finland | CSF SERVICES",

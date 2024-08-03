@@ -5,10 +5,8 @@
 <script is:inline>
     function isElementInViewport(element) {
         const rect = element.getBoundingClientRect();
-        const windowHeight =
-            window.innerHeight || document.documentElement.clientHeight;
-        const windowWidth =
-            window.innerWidth || document.documentElement.clientWidth;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        // const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
         if (rect.top >= 0 && rect.bottom <= windowHeight) return true;
         else if (rect.top <= 0 && rect.bottom <= windowHeight) {

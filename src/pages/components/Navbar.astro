@@ -73,7 +73,6 @@
 </style>
 
 <script is:inline>
-    var isSubMenuOpen = false;
     const menuBtn = document.querySelector(".menuIcon i");
     const menuBtnContainer = document.querySelector(".middle-sec");
     menuBtn.addEventListener("click", ()=>{
@@ -84,7 +83,7 @@
     if(screenWidth < 900){
         const optionsWithSubMenu = menuBtnContainer.querySelectorAll("li.submenu");
         optionsWithSubMenu.forEach(option => {
-            option.addEventListener("click", (e)=>{
+            option.addEventListener("click", ()=>{
                 option.children[2].classList.toggle("invisible");
                 option.children[2].classList.toggle("absolute");
             })
