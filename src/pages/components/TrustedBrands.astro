@@ -2,36 +2,50 @@
 import data from "../data/siteData";
 const brandsData = data.textContent.HomePage.TrustedBrands;
 ---
-<style is:inline>
 
+<style is:inline>
     swiper-container.brandsSwiper {
         width: 100%;
         height: fit-content;
         padding-top: 50px;
-    }   
+    }
 
     swiper-container.brandsSwiper swiper-slide {
         background-position: center;
         background-size: cover;
         width: 300px;
-    }   
+    }
 
     swiper-container.brandsSwiper swiper-slide img {
         display: block;
-    }   
-
+    }
 </style>
 
-<section class="trustedBrandsSection bg-gradient-to-br from-[#032309af] to-[#010c24]">
-    <div class="wrapper z-[2] relative size-full flex justify-center items-center">
-        <div class="content w-full py-6" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="text-center uppercase text-white">{brandsData.heading}</h2>
+<section class="trustedBrandsSection bg-gradient-to-br from-[#032309af] to-[#010c24]" class:list={[!brandsData.isShown && "hidden"]}>
+    <div
+        class="wrapper z-[2] relative size-full flex justify-center items-center"
+    >
+        <div
+            class="content w-full py-6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+        >
+            <h2 class="text-center uppercase text-white">
+                {brandsData.heading}
+            </h2>
             <swiper-container class="brandsSwiper" init="false">
                 {
-                    brandsData.brands.map((brand, index) =>(
+                    brandsData.brands.map((brand, index) => (
                         <swiper-slide class="mb-3 flex justify-center items-center">
-                            <span class="size-[160px] flex justify-center items-center bg-center bg-contain bg-no-repeat" style={`background-image: url('assets/images/award-curve-${(index % 5) + 1}.svg');`}>
-                                <img class="brandImg w-[70%] rounded-md" src={"assets/images/" + brand + ".svg"} alt={"Award " + brand} />
+                            <span
+                                class="size-[160px] flex justify-center items-center bg-center bg-contain bg-no-repeat"
+                                style={`background-image: url('assets/images/award-curve-${(index % 5) + 1}.svg');`}
+                            >
+                                <img
+                                    class="brandImg w-[70%] rounded-md"
+                                    src={"assets/images/" + brand + ".svg"}
+                                    alt={"Award " + brand}
+                                />
                             </span>
                         </swiper-slide>
                     ))
@@ -40,3 +54,42 @@ const brandsData = data.textContent.HomePage.TrustedBrands;
         </div>
     </div>
 </section>
+
+<script is:inline>
+    const swiperEl = document.querySelector(
+        ".trustedBrandsSection swiper-container",
+    );
+
+    Object.assign(swiperEl, {
+        loop: "true",
+        freeMode: "true",
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        speed: "3500",
+        slidesPerView: 2,
+        spaceBetween: 30,
+
+        breakpoints: {
+            "@0.00": {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            "@0.75": {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            "@1.00": {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            "@1.50": {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+    swiperEl.initialize();
+</script>

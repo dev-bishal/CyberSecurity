@@ -11,6 +11,8 @@ interface Props {
     tags : string[]
 }
 const articleURL = Astro.url;
+console.log(articleURL);
+
 
 const {articleTitle, description, featuredImage, authorName, pubDate, tags = []} = Astro.props;
 ---

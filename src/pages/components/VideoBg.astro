@@ -3,7 +3,7 @@ import data from "../data/siteData";
 const contentData = data.textContent.HomePage.VideoBgText.textContent;
 ---
 
-<section class="contactvideoBgSection">
+<section class="contactvideoBgSection" class:list={[!data.textContent.HomePage.VideoBgText.isShown && "hidden"]}>
     <div class="video-holder relative top-0 left-0 size-full">
         <!-- <div class="video-overlay bg-gradient-to-br from-[#656666af] to-[#010c24a0] size-full absolute z-[1]"></div> -->
         <video

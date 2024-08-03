@@ -3,7 +3,7 @@ import data from "../data/siteData";
 const expertiseData = data.textContent.HomePage.Expertise;
 ---
 
-<section class="expertise relative">
+<section class="expertise relative" class:list={[!expertiseData.isShown && "hidden"]}>
     <span
         class="bg size-full block absolute z-0 bg-contain"
         style="background: url('/assets/images/AreaExpertiseBg.png') no-repeat 50% 6%, linear-gradient(0deg, #04083e40 10%, #010c24 100%); background-color: #000; "

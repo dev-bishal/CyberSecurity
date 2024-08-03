@@ -1,3 +1,6 @@
+import Footer from "../components/Footer.astro";
+import Partners from "../partners.astro";
+
 var data = {
     "SiteNameAfter_PageTitle" : true,
     "siteTitle": "CyberSecurity Finland | CSF SERVICES",
@@ -11,19 +14,23 @@ var data = {
                 topLink: {
                     isDisplay : false,
                     title: "Experiencing a Cyberattack? Get help now.",
-                    link: null
+                    link: null,
+                    showIcon : false,
                 },
                 MainHeading: "Leading the way in secure and Resilient cyber Defense",
                 CallToActionLinks : {
                     videoPlayButton : {
+                        isShown: false,
                         title : "See How",
                         redirectLink : "javascript:void(0)",
                     },
                     learnMoreButton : {
+                        isShown: false,
                         title : "Learn More",
                         redirectLink : "javascript:void(0)",
                     },
                     textLink : {
+                        isShown: false,
                         title : "Speak with an expert ",
                         redirectLink : "javascript:void(0)",
                     },
@@ -55,17 +62,21 @@ var data = {
                 ]
             },
             Services: {
+                isShown:true,
                 heading: "Identities & Access, Intelligently Secured",
                 textParagraphs: [
                     "Identities and their privileges are at the heart of every attack, making identity threats increasingly complex and challenging to detect.",
                     "At Cybersecurity Finland, we partner with BeyondTrust to provide the only identity security platform that allows you to detect threats across your entire identity estate. Our platform enables seamless integration, unmatched discovery, and an identity-first data lake to control privileges, access, credentials, and secrets. By adopting a zero-trust approach and leveraging intelligent threat detection, we continuously strengthen your identity security posture, ensuring your business remains secure against emerging threats",
                 ],
                 redirectLink: {
+                    isShown : false,
                     linkTitle: "See the Power of the Platform",
                     linkURL: "javascript:void(0)"
-                }
+                },
+                showImage :true
             },
             Expertise: {
+                isShown:true,
                 title: "Expertise",
                 HeadingLine1: "Our Area",
                 HeadingLine2: "of Expertise",
@@ -105,6 +116,7 @@ var data = {
                 ]
             },
             Incident: {
+                isShown:true,
                 heading: "The benefits of incident response",
                 textParagraph: "CyberSecurity's IR approach combines the industry-leading CyberSecurity Finland® platform along with an experienced team of responders to provide the following",
                 rightSide_Paragraphs: [
@@ -127,6 +139,7 @@ var data = {
                 ],
             },
             ContactCards: {
+                isShown:true,
                 cardsContent: [
                     {
                         iconFile: "icon-paperclip.svg",
@@ -161,6 +174,7 @@ var data = {
                 ]
             },
             TrustedBrands : {
+                isShown:true,
                 heading : "Trusted by the Best",
                 brands : [
                     "trustBrand (1)",
@@ -180,6 +194,7 @@ var data = {
                     ]
             },
             VideoBgText: {
+                isShown : true,
                 textContent : {
                     slide1_Text1: "Your threat landscape",
                     slide1_Text2: "is always evolving.",
@@ -192,6 +207,7 @@ var data = {
                 }
             },
             SliderCards : {
+                isShown : false,
                 heading: "Cyber Security Finland",
                 heading2 : "Insights", 
                 textParagraph : "The latest research and expert perspectives",
@@ -223,6 +239,7 @@ var data = {
                 ]
             },
             ExpandCards:{
+                isShown: true,
                 title: "Solution by role",
                 heading: "Stay ahead of any security challenge",
                 hoverCards : [
@@ -269,7 +286,35 @@ var data = {
                 ]
             }
         },
-        ServicePage:{},
+        FooterContent:{
+            isFooterLinksShown: false,
+            socialLinks: 
+            {
+                isShown : false,
+                links: [
+                    {
+                        iconClass : "fa-brands fa-facebook",
+                        link : "javascript:void(0);"
+                    },
+                    {
+                        iconClass : "fa-brands fa-x-twitter",
+                        link : "javascript:void(0);"
+                    },
+                    {
+                        iconClass : "fa-brands fa-linkedin-in",
+                        link : "javascript:void(0);"
+                    },
+                    {
+                        iconClass : "fa-brands fa-youtube",
+                        link : "javascript:void(0);"
+                    },
+                    {
+                        iconClass : "fa-brands fa-instagram",
+                        link : "javascript:void(0);"
+                    }
+                ]
+            }
+        },
         VAPTPage:{
             header : {
                 bgImageFile : "OIG2.jpeg",
@@ -338,7 +383,7 @@ var data = {
                 },
             ]
         },
-        Services1 : {
+        ServicePage : {
             header : {
                 heading : "Our Services",
                 textParagraph : "Protect your digital assets with our comprehensive cybersecurity services, offering robust solutions including threat detection, risk assessment, and incident response to safeguard your business against evolving cyber threats.",
@@ -350,12 +395,6 @@ var data = {
                 rightCardText : "Continuous monitoring of networks, systems, and applications to identify and respond to security threats in real time."
             },
             
-        },
-        Services2: {
-            header : {
-                heading : "We believe in…",
-                textParagraph : "We created Cybersecurity Finland to make sense of complex cybersecurity. Your own advanced Security Operations Platform with central vision and a single Cyber-Brain™ is the only way to really see and understand all events, implications, and actions.",
-            },
         },
         about:{
             header : {
@@ -407,6 +446,65 @@ var data = {
                     },
                 ]
             }
+        },
+        PartnersPage: {
+            heading : "Trusted by the Best",
+                brands : 
+                [
+                    {brandName: "Sumo",  brandLink : "" ,  brandLogo: "trustBrand (1)"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "trustBrand (2)"},
+                    {brandName: "Red Shield Defence",  brandLink : "" ,  brandLogo: "trustBrand (3)"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_ADT"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_AutoDesk"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Better-mortgage"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Caesar"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Entel-telefonia"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Envision-racing"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Grupo-bimbo"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Michelin"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Resolution-life"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Salesforce"},
+                    {brandName: "",  brandLink : "" ,  brandLogo: "PAN-Customer-callouts-07_Zespri"}
+                ]
+        },
+        Events : {
+            upcomingEvents: [
+                {
+                    eventDate: "01 August 2024",
+                    eventTitle : "Cybersecurity Finland Launch",
+                    eventDescriptionText: "We are excited to invite you to the grand launch of our new cybersecurity company in vibrant Finland. This milestone event will introduce our cutting-edge solutions and innovative approach to cybersecurity. The launch will feature a keynote speech by our founder, outlining the vision and mission of the company. Attendees will enjoy a showcase of our products and services, highlighting how we plan to revolutionize the industry. Interactive demo stations will allow guests to experience our technology firsthand. The evening will be capped off with a celebratory networking reception, providing a chance to meet our team, industry partners, and fellow cybersecurity enthusiasts. Join us as we embark on this exciting new journey to secure the digital world.",
+                    eventLocation: "Finland",
+                    eventType: "Conference",
+                },
+                {
+                    eventDate: "15 August 2024",
+                    eventTitle : "Cybersecurity Summit 2024",
+                    eventDescriptionText: "The Cybersecurity Summit 2024 in San Francisco is a premier event bringing together industry leaders, security professionals, and technology innovators to explore the future of cybersecurity. Attendees will gain insights from keynote speeches by renowned experts, participate in advanced workshops on threat detection and security architecture, and engage in panel discussions on emerging threats. The summit also features a vibrant exhibition showcasing the latest tools and technologies in the cybersecurity field, providing an excellent opportunity for networking and professional growth.",
+                    eventLocation: "San Francisco, CA",
+                    eventType: "Conference",
+                },
+                {
+                    eventDate: "18 August 2024",
+                    eventTitle : "Cyber Defense Expo",
+                    eventDescriptionText: "Join us at the Cyber Defense Expo in the heart of New York City for an immersive experience into the world of cyber defense. This event will kick off with an inspiring opening ceremony led by our CEO, followed by a series of in-depth seminars on cyber hygiene and zero trust security models. Participants will have the chance to interact with cutting-edge cybersecurity software in hands-on demo sessions. A collaborative roundtable will discuss the synergy between public and private sectors in enhancing cyber defenses. The day will conclude with future-focused closing remarks and a look ahead at the evolving landscape of cybersecurity.",
+                    eventLocation: "New York City, NY",
+                    eventType: "Conference",
+                },
+                {
+                    eventDate: "25 August 2024",
+                    eventTitle : "Data Protection Workshop",
+                    eventDescriptionText: "The Data Protection Workshop in Austin is dedicated to equipping professionals with the knowledge and tools to navigate the complex world of data protection laws and regulations. The event will begin with a comprehensive overview of current legislation, followed by detailed sessions on GDPR compliance and strategies for safeguarding Personally Identifiable Information (PII). Attendees will learn from real-world case studies and engage in interactive Q&A sessions with data protection experts. This workshop offers a unique opportunity to connect with peers over a networking lunch and gain actionable insights to enhance data security practices.",
+                    eventLocation: "Finland",
+                    eventType: "Private",
+                },
+                {
+                    eventDate: "28 August 2024",
+                    eventTitle : "Cybersecurity Innovation Conference",
+                    eventDescriptionText: "The Cybersecurity Innovation Conference in Seattle is a must-attend event for those at the forefront of cybersecurity technology. The conference will open with a keynote on groundbreaking innovations in the field, setting the stage for a series of breakout sessions on AI, machine learning, and blockchain applications in cybersecurity. Expert panels will discuss the transformative potential of quantum computing for security practices. The tech showcase will highlight presentations by leading companies and startups, demonstrating innovative solutions to today’s cybersecurity challenges. The day will culminate in an evening reception, providing a platform for networking and live demonstrations.",
+                    eventLocation: "Seattle, WA",
+                    eventType: "Webinar",
+                },
+            ]
         }
     }
 }

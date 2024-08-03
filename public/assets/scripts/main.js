@@ -16,6 +16,6 @@ window.addEventListener('scroll', function () {
 })
 
 function bringToView(sectionElement){
-       element = document.querySelector(sectionElement);
-       element.scrollIntoView();
+    element = document.querySelector(sectionElement);
+    element.scrollIntoView();
 }

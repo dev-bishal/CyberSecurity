@@ -5,7 +5,7 @@ const contactCardsData = data.textContent.HomePage.ContactCards;
 import ContactCards2 from "./contactCards_2.astro";
 ---
 
-<section class="contactSection lg:h-screen xl:h-[60vh] bg-gradient-to-bl from-[#010c24] to-[#032309af]">
+<section class="contactSection lg:h-screen xl:h-[60vh] bg-gradient-to-bl from-[#010c24] to-[#032309af]" class:list={[!contactCardsData.isShown && "hidden"]}>
     <div
         class="wrapper z-[2] relative size-full flex justify-center items-center">
         <div class="content z-10 flex justify-center items-center lg:px-20 px-5">

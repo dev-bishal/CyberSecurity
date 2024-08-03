@@ -2,13 +2,46 @@
 import PageHero from "./components/PageHero.astro";
 import MainLayout from "./layouts/MainLayout.astro";
 
+import data from "./data/siteData";
+import GetStarted from "./components/GetStarted.astro";
+const partnersPageData = data.textContent.PartnersPage
 
 ---
 
 <MainLayout pageTitle="Our Partners CyberSecurity Finland">
-    <PageHero heading="Partners" textContent="At Cybersecurity Finland, our mission is to provide top-tier protection for our clients through cutting-edge technology and innovative solutions." imageFileName="bg(3).jpeg"></PageHero>
+    <PageHero heading="CyberSecurity Finland Partners" textContent="We work through a growing number of leading cyber security technology partners around the world." imageFileName="bg(3).jpeg"></PageHero>
     
     <section class="partners bg-gradient-to-br from-[#032309] to-[#102049]">
         
+        <div class="wrapper pt-10 pb-5 relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+            <div class="container text-center text-xl text-white">
+                <h2 class="lg:text-5xl text-4xl font-bold text-center lg:px-52 lg:leading-[70px] leading-10">Our Partners</h2>
+            </div>
+        </div>
+
+        <div class="partnersWrapper flex flex-wrap p-3 w-full justify-center gap-3  overflow-hidden">
+            
+            {
+                partnersPageData.brands.map((brand)=>(
+                    <div class="partnerCards rounded lg:w-[32%] p-3 bg-gradient-to-br hover:bg-gradient-to-tl from-blue-400 to-cyan-700 grid place-items-center gap-3 shadow-md">
+                        <img src={`/assets/images/${brand.brandLogo}.svg`} alt={`${brand.brandName} Logo`} class="h-[170px] object-contain hover:scale-105 transition-all ease-in-out duration-150" />
+                        <a class="hover:text-white text-gray-200 uppercase font-semibold text-xl" href={`${brand.brandLink}`} target="_blank">{brand.brandName}</a>
+                    </div>
+                ))
+            }
+            
+        </div>
+
+        <div class="contentWrapper text-white w-full">
+            <div class="wrapper relative size-full flex justify-center items-center overflow-hidden bg-cover bg-center">
+                <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent to-[#072822] z-0"></div>
+
+                <GetStarted 
+                    bannerTextTop="Join our Partners Program"
+                    middleText="Get started with CyberSecurity Finland to get exciting benefits."
+                    redirectText="Apply Now"
+                    />
+            </div>
+        </div>
     </section>
 </MainLayout>

@@ -30,7 +30,7 @@ const expandCardsContent = data.textContent.HomePage.ExpandCards;
     }
 
 </style>
-<section class="solutionCardsContainer bg-gradient-to-bl from-[#102049] to-[#032309] text-white py-9">
+<section class="solutionCardsContainer bg-gradient-to-bl from-[#102049] to-[#032309] text-white py-9" class:list={[!expandCardsContent.isShown && "hidden"]}>
     
     <div class="wrapper relative size-full gap-4 flex flex-col justify-center items-center overflow-hidden">
         
