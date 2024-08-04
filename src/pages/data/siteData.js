@@ -412,7 +412,29 @@ var data = {
                     imgFile : ""
                 }
             ],
+            expertiseSection: {
+                isShown: true,
+                expertise : [
+                    {
+                        iconFile: "ciso-icn",
+                        title : "Threat Intelligence Services"
+                    },
+                    {
+                        iconFile: "soc-manager-icn",
+                        title : "Penetration Testing"
+                    },
+                    {
+                        iconFile: "cloud-secops-icn",
+                        title : "Security Awareness Training"
+                    },
+                    {
+                        iconFile: "infrastructure-manager-icn",
+                        title : "Incident Response Planning and Management"
+                    },
+                ]
+            },
             awardsSection:{
+                isShown: true,
                 title: "Industry recognition",
                 subText: "CyberSecurity Finland is recognized as an industry leader by key analyst firms",
                 awardCards : [
@@ -442,6 +464,14 @@ var data = {
                         redirectPath : "javascript:void(0)",
                     },
                 ]
+            },
+            messageOfCEO : {
+                isShown: true,
+                title : "Message from CEO",
+                ceoImageLink : "https://media.licdn.com/dms/image/C4E03AQGTpf9taVdtuQ/profile-displayphoto-shrink_800_800/0/1580723864651?e=1727308800&v=beta&t=tWCirJx4rXQeEQCGsNwWwzfOqPKuIawi1CjR8Ivbf38",
+                ceoName: "Mr. Ben Ottoman",
+                ceoDesignation: "CEO CyberSecurity Finland",
+                message : "Welcome to Cybersecurity Finland. As the CEO, I am proud to lead a team of dedicated professionals committed to safeguarding your digital world. Our mission is to provide top-notch cybersecurity solutions that protect your valuable assets and ensure your peace of mind."
             }
         },
         PartnersPage: {

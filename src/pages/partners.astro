@@ -23,7 +23,7 @@ const partnersPageData = data.textContent.PartnersPage
             
             {
                 partnersPageData.brands.map((brand)=>(
-                    <div class="partnerCards rounded lg:w-[32%] p-3 bg-gradient-to-br hover:bg-gradient-to-tl from-blue-400 to-cyan-700 grid place-items-center gap-3 shadow-md">
+                    <div class="partnerCards rounded md:w-[44%] lg::w-[32%] p-3 bg-gradient-to-br hover:bg-gradient-to-tl from-blue-400 to-cyan-700 grid place-items-center gap-3 shadow-md">
                         <img src={`/assets/images/${brand.brandLogo}.svg`} alt={`${brand.brandName} Logo`} class="h-[170px] object-contain hover:scale-105 transition-all ease-in-out duration-150" />
                         <a class="hover:text-white text-gray-200 uppercase font-semibold text-xl" href={`${brand.brandLink}`} target="_blank">{brand.brandName}</a>
                     </div>
