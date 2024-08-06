@@ -79,7 +79,8 @@
         menuBtnContainer.classList.toggle("translate-x-full")
     })
 
-    const screenWidth = window.innerHeight || document.documentElement.clientHeight;
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    console.log(screenWidth);
     if(screenWidth < 900){
         const optionsWithSubMenu = menuBtnContainer.querySelectorAll("li.submenu");
         optionsWithSubMenu.forEach(option => {

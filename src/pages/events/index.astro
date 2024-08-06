@@ -16,6 +16,13 @@ function daysBetweenDates(dateStr1: string, dateStr2: string): number {
     const daysDiff: number = timeDiff / (1000 * 3600 * 24);
     return Math.floor(daysDiff);
 }
+
+let eventsCount=0;
+eventData.upcomingEvents.map((_event, index)=>(
+    daysBetweenDates(new Date().toString(), _event.eventDate) > -1 && eventsCount++
+))
+
+                            
 ---
 
 <MainLayout pageTitle="Events">
@@ -28,39 +35,49 @@ function daysBetweenDates(dateStr1: string, dateStr2: string): number {
             <div class="container1320 size-full flex flex-col items-center justify-center lg:w-[1140px] lg:pt-10 py-5 lg:px-0 px-5">
 
                 <div class="container text-center text-xl text-white w-full">
-                    <h2 class="lg:text-5xl text-4xl font-bold text-center lg:px-52 lg:leading-[70px] leading-10">Upcoming Events</h2>
+                    {
+                        eventsCount != 0 
+                        ?
+                        <h2 class="lg:text-5xl text-4xl font-bold text-center lg:px-52 lg:leading-[70px] leading-10">Upcoming Events</h2>
                     
-                    <div class="upcoming-event-wrapper flex flex-col gap-3">
-                        {
-                            eventData.upcomingEvents.map((_event, index)=>(
-                            daysBetweenDates(new Date().toString(), _event.eventDate) > -1 &&
-                                <div class="event flex border-2 border-blue-400" class:list={[index%2 == 0 && "flex-row-reverse"]}>
-                                    <div class="eventDt p-4 text-center bg-gradient-to-br from-blue-500 to-[#0a4b0b] text-white flex flex-col justify-center items-center w-[25%]">
-                                        <span class="eventDay block w-full text-4xl font-semibold">{_event.eventDate.substring(0, 2)}</span>
-                                        <span class="eventMonthYear block w-full text-2xl">{_event.eventDate.substring(3)}</span>
-                                    </div>
-                                   
-                                    <div class="eventDesc text-left p-4 bg-white text-blue-900 w-[75%]">
-                                        <p class="eventTitle text-xl font-bold line-clamp-2 min-h-[56px]">{_event.eventTitle}</p>
-                                        <p class="eventDescription text-sm line-clamp-4">{_event.eventDescriptionText}</p>
-                                       
-                                        <span class="flex gap-5 items-center mt-3 text-xs">
-                                            <a href="" class="hidden h-full bg-gradient-to-tr hover:bg-gradient-to-bl from-blue-900 to-cyan-400 text-white rounded-full p-3">Learn More</a>
-                                            <span class="eventLocation flex items-center gap-1 rounded-full bg-blue-100 hover:bg-blue-200 p-3 cursor-pointer">
-                                                <i class="fa-duotone fa-solid fa-location-dot"></i>
-                                                <span class="line-clamp-2">{_event.eventLocation}</span>
+                        <div class="upcoming-event-wrapper flex flex-col gap-3">
+                            {
+                                eventData.upcomingEvents.map((_event, index)=>(
+                                daysBetweenDates(new Date().toString(), _event.eventDate) > -1 &&
+                                    <div class="event flex border-2 border-blue-400" class:list={[index%2 == 0 && "flex-row-reverse"]}>
+                                        <div class="eventDt p-4 text-center bg-gradient-to-br from-blue-500 to-[#0a4b0b] text-white flex flex-col justify-center items-center w-[25%]">
+                                            <span class="eventDay block w-full text-4xl font-semibold">{_event.eventDate.substring(0, 2)}</span>
+                                            <span class="eventMonthYear block w-full text-2xl">{_event.eventDate.substring(3)}</span>
+                                        </div>
+                                    
+                                        <div class="eventDesc text-left p-4 bg-white text-blue-900 w-[75%]">
+                                            <p class="eventTitle text-xl font-bold line-clamp-2 min-h-[56px]">{_event.eventTitle}</p>
+                                            <p class="eventDescription text-sm line-clamp-4">{_event.eventDescriptionText}</p>
+                                        
+                                            <span class="flex gap-5 items-center mt-3 text-xs">
+                                                <a href="" class="hidden h-full bg-gradient-to-tr hover:bg-gradient-to-bl from-blue-900 to-cyan-400 text-white rounded-full p-3">Learn More</a>
+                                                <span class="eventLocation flex items-center gap-1 rounded-full bg-blue-100 hover:bg-blue-200 p-3 cursor-pointer">
+                                                    <i class="fa-duotone fa-solid fa-location-dot"></i>
+                                                    <span class="line-clamp-2">{_event.eventLocation}</span>
+                                                </span>
+                                                <span class="eventType flex items-center gap-1 rounded-full bg-blue-100 hover:bg-blue-200 p-3 cursor-pointer">
+                                                    <i class="fa-solid fa-people-group"></i>
+                                                    <span class="line-clamp-2">{_event.eventType}</span>
+                                                </span>
                                             </span>
-                                            <span class="eventType flex items-center gap-1 rounded-full bg-blue-100 hover:bg-blue-200 p-3 cursor-pointer">
-                                                <i class="fa-solid fa-people-group"></i>
-                                                <span class="line-clamp-2">{_event.eventType}</span>
-                                            </span>
-                                        </span>
+                                        </div>
                                     </div>
-                                </div>
-                             ))
-                        }
-                        
-                    </div>
+                                 ))
+                            }
+
+                        </div>
+                        : 
+                        <div class="upcoming-event-wrapper flex flex-col justify-center gap-1 items-center h-[400px]">
+                            <h2 class="lg:text-3xl text-4xl font-bold text-center lg:px-52 lg:leading-[70px] leading-10">No New Events Declared as of now</h2>
+                            <p>Please stay tune. New Events might be declared soon.</p>
+                        </div>
+                    }
+                    
                 </div>
 
             </div>
