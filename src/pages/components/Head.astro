@@ -14,6 +14,7 @@ const {pageTitle = data.siteTitle, pageDescription = data.MetaDescription, pageT
 var FinalTitle;
 if(data.SiteNameAfter_PageTitle) FinalTitle = `${pageTitle} - ${data.siteTitle}`;
 else FinalTitle = `${pageTitle}`;
+const baseUrl = Astro.site ?? Astro.url;
 ---
 
 <head>
@@ -33,7 +34,8 @@ else FinalTitle = `${pageTitle}`;
         basic: {
           title: `${pageTitle}`,
           type: `${pageType}`,
-          image: `${pageFeaturedImageUrl}`,
+          image: `${Astro.site?.origin}${pageFeaturedImageUrl}`,
+          url: new URL(Astro.url.pathname + Astro.url.search, baseUrl)
         }
       }}
       twitter={{

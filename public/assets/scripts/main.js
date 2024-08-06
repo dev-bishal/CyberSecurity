@@ -19,3 +19,4 @@ function bringToView(sectionElement){
     element = document.querySelector(sectionElement);
     element.scrollIntoView();
 }
+

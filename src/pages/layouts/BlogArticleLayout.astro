@@ -10,14 +10,15 @@ interface Props {
     pubDate : string,
     tags : string[]
 }
-const articleURL = Astro.url;
-console.log(articleURL);
+const domainURL = Astro.site;
+const articleURL = Astro.site?.origin + Astro.url.pathname;
+console.log("Check This - ", Astro.request.url);
 
 
 const {articleTitle, description, featuredImage, authorName, pubDate, tags = []} = Astro.props;
 ---
 
-<MainLayout pageTitle={articleTitle} pageDescription={description}>
+<MainLayout pageTitle={articleTitle} pageDescription={description} pageType="article" pageFeaturedImageUrl={`/assets/images/${featuredImage}`}>
     <section class="overflow-hidden relative">
         <div class="slantGradient z-0 absolute 2xl:top-[-600px] xl:top-[-400px] lg:top-[-300px] top-[-210px] left-[-300px] bg-gradient-to-tr from-green-800 to-blue-600 h-[80vh] w-[200vw] xl:-rotate-[10deg] -rotate-[15deg]"></div>
         
@@ -61,15 +62,15 @@ const {articleTitle, description, featuredImage, authorName, pubDate, tags = []}
                                         <span>Share:</span>
                                         <ul class="tags flex gap-x-3">
                                             <li class="hover:text-blue-300 cursor-pointer text-3xl ">
-                                                <a target="_blank" href=`mailto:?subject=New%20Article&body=Read%20this%20new%20article%20${articleURL.href}`><i class="fa-solid fa-square-share-nodes"></i></a>
+                                                <a target="_blank" href=`mailto:?subject=New%20Article&body=Read%20this%20new%20article%20${articleURL}`><i class="fa-solid fa-square-share-nodes"></i></a>
                                             </li>
                                             
                                             <li class="hover:text-blue-300 cursor-pointer text-3xl ">
-                                                <a target="_blank" href=`https://www.linkedin.com/shareArticle?mini=true&url=${articleURL.href}&title=${articleTitle}&summary=${description}&source=Example`><i class="fa-brands fa-linkedin"></i></a>
+                                                <a target="_blank" href=`https://www.linkedin.com/shareArticle?mini=true&url=${articleURL}&title=${articleTitle}&summary=${description}&source=Example`><i class="fa-brands fa-linkedin"></i></a>
                                             </li>
                                             
                                             <li class="hover:text-blue-300 cursor-pointer text-3xl ">
-                                                <a target="_blank" href=`https://wa.me/?text=Read%20this%20new%20article%20${articleURL.href}`><i class="fa-brands fa-square-whatsapp"></i></a>
+                                                <a target="_blank" href=`https://wa.me/?text=Read%20this%20new%20article%20${articleURL}`><i class="fa-brands fa-square-whatsapp"></i></a>
                                             </li>
                                         </ul>
                                     </span>

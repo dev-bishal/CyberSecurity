@@ -10,13 +10,13 @@ interface Props {
     pageFeaturedImageUrl ?: string
 }
 
-const {pageTitle, pageDescription} = Astro.props;
+const {pageTitle, pageDescription, pageType, pageFeaturedImageUrl} = Astro.props;
 
 ---
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-    <Head pageTitle={pageTitle} pageDescription={pageDescription}/>
+    <Head pageTitle={pageTitle} pageDescription={pageDescription} {pageType} {pageFeaturedImageUrl}/>
 
     <body class="font-lexend">
         <Navbar></Navbar>
@@ -32,6 +32,3 @@ const {pageTitle, pageDescription} = Astro.props;
     </body>
 </html>
 
-<!-- <div class="wrapper w-full flex justify-center items-center">
-    <div class="container1320 lg:w-[1320px]"></div>
-</div> -->
